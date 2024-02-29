@@ -9,6 +9,7 @@ use App\Models\MoldClose;
 use App\Models\EjectorLub;
 use Illuminate\Http\Request;
 use App\Models\MachineParameter;
+use Yajra\DataTables\DataTables;
 use App\Models\MachineManagement;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\HeaterRequest;
@@ -22,13 +23,49 @@ use Illuminate\Database\Eloquent\Casts\ArrayObject;
 class MachineParameterController extends Controller
 {
 
-    public function loadMachineParameter(Request $request){
-        return 'true' ;
+    public function loadMachineParameterOne(Request $request){
+
+        // return 'true' ;
+        /*
+        { "data" : "action", orderable:false, searchable:false},
+        { "data" : "status"},
+        { "data" : "employee_name"},
+        { "data" : "username"},
+        { "data" : "user_level"},
+
+        */
+
         date_default_timezone_set('Asia/Manila');
         try {
-            return response()->json(['is_success' => 'true']);
+            $machine_parameter = DB::connection('mysql')
+            ->select(' SELECT  parameters.*
+                FROM machine_parameters AS parameters
+                LEFT JOIN machine ON machine.id = parameters.machine_id
+                WHERE machine.machine_category = 1 AND parameters.deleted_at IS NULL
+                ORDER BY parameters.created_at DESC
+            ');
+            return DataTables::of($machine_parameter)
+            ->addColumn('get_action', function($row){
+                $result = '';
+                $result .= '<center>';
+                $result .= "<button class='btn btn-info btn-sm mr-1'first-molding-id='' id='btnEditFirstMolding'><i class='fa-solid fa-pen-to-square'></i></button>";
+                $result .= '</center>';
+                return $result;
+            })
+            ->addColumn('get_status', function($row){
+                $result = '';
+                $result .= "Status";
+                return $result;
+            })
+            ->addColumn('get_machine_no', function($row){
+                $result = '';
+                $result .= "get_machine_no";
+                return $result;
+            })
+            ->rawColumns(['get_action','get_status','get_machine_no'])
+            ->make(true);
         } catch (Exception $e) {
-            return response()->json(['is_success' => 'false', 'exceptionError' => e->getMessage()]);
+            return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
         }
     }
     public function getMachineDetailsForm1(Request $request){

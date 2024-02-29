@@ -597,29 +597,29 @@
             }
 
                 $('#formAddMachine1').submit(function (e) {
-            e.preventDefault();
-            saveMachineOne();
-        });
-            // dataTablesMachineParameter = $("#tableMachineParameter_form1").DataTable({
-            //     "processing" : false,
-            //     "serverSide" : true,
-            //     "responsive": true,
-            //     // "order": [[ 0, "desc" ],[ 4, "desc" ]],
-            //     "language": {
-            //         "info": "Showing _START_ to _END_ of _TOTAL_ user records",
-            //         "lengthMenu": "Show _MENU_ user records",
-            //     },
-            //     "ajax" : {
-            //         // url: "view_users",
-            //     },
-            //     "columns":[
-            //         { "data" : "action", orderable:false, searchable:false},
-            //         { "data" : "status"},
-            //         { "data" : "employee_name"},
-            //         { "data" : "username"},
-            //         { "data" : "user_level"},
-            //     ],
-            // });
+                    e.preventDefault();
+                    saveMachineOne();
+                });
+            dataTablesMachineParameter = $("#tableMachineParameter_form1").DataTable({
+                "processing" : false,
+                "serverSide" : true,
+                "responsive": true,
+                // "order": [[ 0, "desc" ],[ 4, "desc" ]],
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ user records",
+                    "lengthMenu": "Show _MENU_ user records",
+                },
+                "ajax" : {
+                    url: "load_machine_parameter_one",
+                },
+                "columns":[
+                    { "data" : "get_action", orderable:false, searchable:false},
+                    { "data" : "get_status"},
+                    { "data" : "material_name"},
+                    { "data" : "device_name"},
+                    { "data" : "get_machine_no"},
+                ],
+            });
 
         });
     </script>
