@@ -24,18 +24,18 @@ class MoldCloseRequest extends FormRequest
     public function rules()
     {
         return [
-            'hi_v' => ['required','integer'],
-            'mid_slow' => ['required','integer'],
-            'low_l' => ['required','integer'],
-            'obstacle_check_tm' => ['required','integer'],
-            'slow_start' => ['required','integer'],
-            'slow_end' => ['required','integer'],
-            'lvlp' => ['required','integer'],
-            'hpcl' => ['required','integer'],
-            'mid_sl_p' => ['required','integer'],
-            'low_p' => ['required','integer'],
-            'hi_p' => ['required','integer'],
-            'hi_p_unit' => ['required','integer'],
+            'hi_v' => ['required','numeric'],
+            'mid_slow' => ['required','numeric'],
+            'low_l' => ['required','numeric'],
+            'obstacle_check_tm' => ['required','numeric'],
+            'slow_start' => ['required','numeric'],
+            'slow_end' => ['required','numeric'],
+            'lvlp' => ['required','numeric'],
+            'hpcl' => ['required','numeric'],
+            'mid_sl_p' => ['required','numeric'],
+            'low_p' => ['required','numeric'],
+            'hi_p' => ['required','numeric'],
+            'hi_p_unit' => ['required','numeric'],
         ];
     }
 }

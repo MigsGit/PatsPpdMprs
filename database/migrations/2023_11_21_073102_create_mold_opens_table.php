@@ -16,23 +16,19 @@ class CreateMoldOpensTable extends Migration
         Schema::create('mold_opens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('machine_parameter_id')->unsigned();
-            $table->string('open_end_v');
-            $table->string('hi_velocity2');
-            $table->string('hi_velocity1_percent');
-            $table->string('open_v');
-            $table->string('open_stop');
-            $table->string('low_distance');
-            $table->string('hi_velocity1_mm');
-            // $table->string('status')->nullable()->default(1)->comment = '0-Not Active, 1-Active';
-
+            $table->float('open_end_v')->nullable();
+            $table->float('hi_velocity_2')->nullable();
+            $table->float('hi_velocity_1_percent')->nullable();
+            $table->float('open_v')->nullable();
+            $table->float('tmp_stop_time')->nullable();
+            $table->float('open_stop')->nullable();
+            $table->float('low_distance')->nullable();
+            $table->float('hi_velocity_1mm')->nullable();
+            $table->float('tmp_stop_pos')->nullable();
+            $table->softDeletes();
+            $table->timestamp('updated_at')->nullable();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
-
-
-           // Defaults
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('last_updated_by')->nullable();
-            $table->timestamps();
         });
     }
 

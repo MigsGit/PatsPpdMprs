@@ -104,7 +104,7 @@
                             <div class="col-md-12">
                                 <div class="card-body">
                                     <!-- For User Id -->
-
+                        {{----}}
                                 <input type="hidden" name="machine_parameter_id" id="machineParameterId">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4">
@@ -188,6 +188,7 @@
                                     <br>
 
                                     <div class="accordion" id="accordionExample">
+
                                         <div class="card">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
@@ -267,8 +268,7 @@
                                                     </div>
                                                 </div>
                                         </div>
-
-                                    {{--     <div class="card">
+                                    <div class="card">
                                             <div class="card-header" id="headingTwo">
                                                 <h5 class="mb-0">
                                                     <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -282,40 +282,40 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textEjPres" class="form-label">EJ PRES<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="ej_pres" id="textEjPres" placeholder="%">
+                                                            <input min="0" type="number" class="form-control" name="ej_pres" id="textEjPres" placeholder="%">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textFwdEv1" class="form-label">FWD EV1<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="fwd_ev1" id="textFwdEv1" placeholder="%">
+                                                            <input min="0" type="number" class="form-control" name="fwd_ev1" id="textFwdEv1" placeholder="%">
 
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textFwdEv2" class="form-label">FWD EV2<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="fwd_ev2" id="textFwdEv2" placeholder="%">
+                                                            <input min="0" type="number" class="form-control" name="fwd_ev2" id="textFwdEv2" placeholder="%">
 
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textFwdEv2" class="form-label">FWD STOP<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="fwd_stop" id="textFwdStop" placeholder="mm">
+                                                            <input min="0" type="number" class="form-control" name="fwd_stop" id="textFwdStop" placeholder="mm">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textBwdStop" class="form-label">BWD STOP<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="bwd_stop" id="textBwdStop" placeholder="mm">
+                                                            <input min="0" type="number" class="form-control" name="bwd_stop" id="textBwdStop" placeholder="mm">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textCount" class="form-label">COUNT<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="count" id="textCount" placeholder="">
+                                                            <input min="0" type="number" class="form-control" name="count" id="textCount" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textPattern" class="form-label">PATTERN<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="pattern" id="textPattern" placeholder="">
+                                                            <input min="0" type="number" class="form-control" name="pattern" id="textPattern" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="card">
+                                            <div class="card">
                                             <div class="card-header" id="headingThree">
                                                 <h5 class="mb-0">
                                                     <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -329,39 +329,39 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textOpenEndV" class="form-label">OPEN END V.<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="open_end_v" id="textOpenEndV" placeholder="mm">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="open_end_v" id="textOpenEndV" placeholder="mm">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textHiVelocity2" class="form-label">HI VELOCITY 2<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="hi_velocity_2" id="textHiVelocity2" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_2" id="textHiVelocity2" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textHiVelocity1Percent" class="form-label">HI VELOCITY 1<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="hi_velocity_1_percent" id="c" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_1_percent" id="c" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textOpenV" class="form-label">OPEN V<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="open_v" id="textOpenV" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="open_v" id="textOpenV" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textTmpStopTime" class="form-label">TMP STOP TIME<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="tmp_stop_time" id="textTmpStopTime" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="tmp_stop_time" id="textTmpStopTime" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textOpenStop" class="form-label">OPEN STOP<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="open_stop" id="textOpenStop" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="open_stop" id="textOpenStop" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textLowDistance" class="form-label">LOW DISTANCE<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="low_distance" id="textLowDistance" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="low_distance" id="textLowDistance" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textHiVelocity1mm" class="form-label">HI VELOCITY 1<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="hi_velocity_1mm" id="textHiVelocity1mm" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_1mm" id="textHiVelocity1mm" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="textTmpStopPos" class="form-label">TMP STOP POS<span class="text-danger" title="Required">*</span></label>
-                                                            <input type="text" class="form-control" name="tmp_stop_pos" id="textTmpStopPos" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="tmp_stop_pos" id="textTmpStopPos" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -375,7 +375,6 @@
                                                     HEATER
                                                 </button>
                                                 </h5>
-
                                             </div>
                                             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                                                 <div class="card-body">
@@ -401,28 +400,91 @@
                                                     <br>
 
                                                     <div class="row">
-                                                        <div class="col-md-6 col-lg-2" id="setId">
+                                                        <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                            SET
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="hot_sprue_set" id="textHotSprueSet" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="hot_sprue_set" id="textHotSprueSet" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="nozzle_set" id="textNozzleSet" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="nozzle_set" id="textNozzleSet" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="front_set" id="textFrontSet" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="front_set" id="textFrontSet" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="mid_set" id="textMidSet" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mid_set" id="textMidSet" placeholder="">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="rear_set" id="textRearSet" placeholder="">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="rear_set" id="textRearSet" placeholder="">
                                                         </div>
                                                     </div>
                                                     <br>
 
-
                                                     <div class="row">
+                                                        <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                            ACTUAL
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="hot_sprue_actual" id="textHotSprueActual" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="nozzle_actual" id="textNozzleActual" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="front_actual" id="textFrontActual" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mid_actual" id="textMidActual" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="rear_actual" id="textRearActual" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-2">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <label for="textHotSprueSet" class="form-label">MOLD 1<span class="text-danger" title="Required">*</span></label>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <label for="textNozzleSet" class="form-label">MOLD 2<span class="text-danger" title="Required">*</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                            MOLD HEATER
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                            SET
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mold_one_set" id="textHotSprueSet" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mold_two_set" id="textNozzleSet" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-2 mb-3" id="setId" style="font-weight: bold">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2 mb-3" id="setId" style="font-weight: bold">
+                                                            ACTUAL
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mold_one_actual" id="moldOneActual" placeholder="">
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-2">
+                                                            <input min="0" type="number" step="0.01" class="form-control" name="mold_two_actual" id="moldTwoActual" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    {{--    <div class="row">
                                                         <div class="col-md-6 col-lg-2" id="actualId">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
@@ -441,10 +503,10 @@
                                                             <input type="text" class="form-control" name="rear_actual" id="textFrontSet" placeholder="">
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -29,8 +29,7 @@ class CreateMoldClosesTable extends Migration
             $table->string('hi_p')->nullable();
             $table->string('hi_p_unit')->nullable()->default(0)->comment = '1-Ton, 2-%';
             $table->softDeletes();
-            // Defaults
-            $table->timestamps();
+
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
         });

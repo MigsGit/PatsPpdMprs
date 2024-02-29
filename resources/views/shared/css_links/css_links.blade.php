@@ -29,10 +29,7 @@
 <link rel="stylesheet" href="{{ asset('public/css/custom.css') }}">
 
 <style>
-    #setId::before{
-        content: "SET " !important;
-        font-weight: bold;
-    }
+    
     #actualId::before{
         content: "ACTUAL " !important;
         font-weight: bold;

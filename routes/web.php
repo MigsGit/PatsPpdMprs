@@ -82,6 +82,7 @@ Route::controller(MachineParameterController::class)->group(function () {
 });
 Route::controller(MachineParameterController::class)->group(function () {
     Route::post('/save_machine_one', 'saveMachineOne')->name('save_machine_one');
+    Route::post('/load_machine_parameter', 'loadMachineParameter')->name('load_machine_parameter');
 });
 //
 
