@@ -13,7 +13,7 @@ class MoldCloseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class MoldCloseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'hi_v' => ['required','integer'],
+            'mid_slow' => ['required','integer'],
+            'low_l' => ['required','integer'],
+            'obstacle_check_tm' => ['required','integer'],
+            'slow_start' => ['required','integer'],
+            'slow_end' => ['required','integer'],
+            'lvlp' => ['required','integer'],
+            'hpcl' => ['required','integer'],
+            'mid_sl_p' => ['required','integer'],
+            'low_p' => ['required','integer'],
+            'hi_p' => ['required','integer'],
+            'hi_p_unit' => ['required','integer'],
         ];
     }
 }

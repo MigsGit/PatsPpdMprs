@@ -16,26 +16,23 @@ class CreateMoldClosesTable extends Migration
         Schema::create('mold_closes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('machine_parameter_id')->unsigned();
-            $table->string('hiv');
-            $table->string('mid_slow');
-            $table->string('low_l');
-            $table->string('slow_start');
-            $table->string('slow_end');
-            $table->string('lvlp');
-            $table->string('hpcl');
-            $table->string('mid_slp');
-            $table->string('low_p');
-            $table->string('hi_p')->comment = '0-KN, 1-%';
-            // $table->string('status')->nullable()->default(1)->comment = '0-Not Active, 1-Active';
-
+            $table->string('hi_v')->nullable();
+            $table->string('mid_slow')->nullable();
+            $table->string('low_l')->nullable();
+            $table->string('obstacle_check_tm')->nullable();
+            $table->string('slow_start')->nullable();
+            $table->string('slow_end')->nullable();
+            $table->string('lvlp')->nullable();
+            $table->string('hpcl')->nullable();
+            $table->string('mid_sl_p')->nullable();
+            $table->string('low_p')->nullable();
+            $table->string('hi_p')->nullable();
+            $table->string('hi_p_unit')->nullable()->default(0)->comment = '1-Ton, 2-%';
+            $table->softDeletes();
+            // Defaults
+            $table->timestamps();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
-
-
-           // Defaults
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('last_updated_by')->nullable();
-            $table->timestamps();
         });
     }
 

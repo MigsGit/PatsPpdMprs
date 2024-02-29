@@ -105,7 +105,7 @@
                                 <div class="card-body">
                                     <!-- For User Id -->
 
-                                    {{-- <input type="hidden" name="machine_parameter_id" id="machineParameterId">
+                                <input type="hidden" name="machine_parameter_id" id="machineParameterId">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4">
                                             <label for="selectMachine" class="form-label"> Machine<span class="text-danger" title="Required">*</span></label>
@@ -130,8 +130,6 @@
                                             <input type="text" class="form-control" name="date_created" id="textDateCreated" placeholder="Auto-generated" readonly>
                                         </div>
                                     </div>
-
-
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textDeviceName" class="form-label">Device Name<span class="text-danger" title="Required">*</span></label>
@@ -185,7 +183,7 @@
                                             <label for="textUnitWeight" class="form-label">Unit Weight<span class="text-danger" title="Required">*</span></label>
                                             <input min="0" type="number" class="form-control" name="unit_weight" id="textUnitWeight" placeholder="Unit Weight">
                                         </div>
-                                    </div> --}}
+                                    </div>
 
                                     <br>
 
