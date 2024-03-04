@@ -24,21 +24,18 @@ class MachineParameterController extends Controller
 {
 
     public function loadMachineParameterOne(Request $request){
-
         // return 'true' ;
         /*
-        { "data" : "action", orderable:false, searchable:false},
-        { "data" : "status"},
-        { "data" : "employee_name"},
-        { "data" : "username"},
-        { "data" : "user_level"},
-
+            { "data" : "action", orderable:false, searchable:false},
+            { "data" : "status"},
+            { "data" : "employee_name"},
+            { "data" : "username"},
+            { "data" : "user_level"},
         */
-
         date_default_timezone_set('Asia/Manila');
         try {
             $machine_parameter = DB::connection('mysql')
-            ->select(' SELECT  parameters.*
+            ->select(' SELECT  parameters.*,machine.machine_name
                 FROM machine_parameters AS parameters
                 LEFT JOIN machine ON machine.id = parameters.machine_id
                 WHERE machine.machine_category = 1 AND parameters.deleted_at IS NULL
@@ -48,7 +45,8 @@ class MachineParameterController extends Controller
             ->addColumn('get_action', function($row){
                 $result = '';
                 $result .= '<center>';
-                $result .= "<button class='btn btn-info btn-sm mr-1'first-molding-id='' id='btnEditFirstMolding'><i class='fa-solid fa-pen-to-square'></i></button>";
+                //<button type="button" class="btn btn-primary mb-3" machine-parameter-id='$row->id' id="btnAddMachine1" data-bs-toggle="modal" data-bs-target="#modalAddMachine1"><i class='fa-solid fa-pen-to-square'></i></button>
+                $result .= "<button class='btn btn-info btn-sm mr-1' machine-parameter-id='$row->id' id='btnEditMachineParameter' data-bs-toggle='modal' data-bs-target='#modalAddMachine1'><i class='fa-solid fa-pen-to-square'></i></button>";
                 $result .= '</center>';
                 return $result;
             })
@@ -57,12 +55,7 @@ class MachineParameterController extends Controller
                 $result .= "Status";
                 return $result;
             })
-            ->addColumn('get_machine_no', function($row){
-                $result = '';
-                $result .= "get_machine_no";
-                return $result;
-            })
-            ->rawColumns(['get_action','get_status','get_machine_no'])
+            ->rawColumns(['get_action','get_status'])
             ->make(true);
         } catch (Exception $e) {
             return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
@@ -131,6 +124,22 @@ class MachineParameterController extends Controller
             return response()->json(['is_success' => 'true']);
         } catch (\Exception $e) {
             DB::rollback();
+            return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
+        }
+    }
+
+    public function editMachineParameter (Request $request){
+        // return $request->all();;
+        date_default_timezone_set('Asia/Manila');
+        try {
+            $machine_parameter_id = $request->machine_parameter_id;
+
+            $machine_parameter_detail =  MachineParameter::with('mold_close','ejector_lub','mold_open','heater')->where('id',$machine_parameter_id)->get();
+            return response()->json([
+                'is_success' => 'true',
+                'machine_parameter_detail' => $machine_parameter_detail[0],
+            ]);
+        } catch (\Exception $e) {
             return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
         }
     }

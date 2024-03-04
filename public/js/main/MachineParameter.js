@@ -1,3 +1,10 @@
+const tbl = {
+    tableMachineParameter_form1 : "#tableMachineParameter_form1",
+}
+const form = {
+    formAddMachine1 : $('#formAddMachine1'),
+}
+
 function getMachine1(cboElement){
 	let result = '<option value="0" disabled selected>Select One</option>';
 	$.ajax({

@@ -2,21 +2,31 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Heater;
+use App\Models\MoldOpen;
+use App\Models\MoldClose;
+use App\Models\EjectorLub;
 use App\Models\MachineManagement;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MachineParameter extends Model
 {
     use HasFactory;
 
-    // public function machine_mold_details(){
-    //     return $this->hasMany(MachineMold::class, 'machine_parameter_id', 'id');
-    // } // info hasOne, details hasMany
+    public function mold_close(){
+        return $this->hasOne(MoldClose::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
 
-    // public function machine_heater(){
-    //     return $this->hasMany(MachineHeater::class, 'machine_parameter_id', 'id');
-    // } // info hasOne, details hasMany
+    public function ejector_lub(){
+        return $this->hasOne(EjectorLub::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
 
+    public function mold_open(){
+        return $this->hasOne(MoldOpen::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
+
+    public function heater(){
+        return $this->hasOne(Heater::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
 }

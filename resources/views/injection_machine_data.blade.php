@@ -50,6 +50,7 @@
                                                     <tr>
                                                         <th>Action</th>
                                                         <th>Status</th>
+                                                        <th>Machine Name</th>
                                                         <th>Device Name</th>
                                                         <th>Material Name</th>
                                                         <th>Machine No.</th>
@@ -615,10 +616,117 @@
                 "columns":[
                     { "data" : "get_action", orderable:false, searchable:false},
                     { "data" : "get_status"},
+                    { "data" : "machine_name"},
                     { "data" : "material_name"},
                     { "data" : "device_name"},
-                    { "data" : "get_machine_no"},
+                    { "data" : "machine_no"},
                 ],
+            });
+            console.log(tbl.tableMachineParameter_form1);
+            const editMachineParameter = (machineParameterId) => {
+                console.log('dassd',machineParameterId);
+                $.ajax({
+                    type: 'GET',
+                    url: 'edit_machine_parameter',
+                    data: {'machine_parameter_id' : machineParameterId},
+                    dataType: 'json',
+                    beforeSend: function(){
+
+                    },
+                    success: function (response) {
+                        let machineParameter = response.machine_parameter_detail;
+                        let moldClose = machineParameter.mold_close;
+                        let ejectorLub = machineParameter.ejector_lub;
+                        let moldOpen = machineParameter.mold_open;
+                        let heater = machineParameter.heater;
+                        //Machine Parameter
+                        form.formAddMachine1.find('[name="machine_id"]').val(machineParameter.machine_id);
+                        form.formAddMachine1.find('[name="device_name"]').val(machineParameter.device_name);
+                        form.formAddMachine1.find('[name="material_mixing_ratio_v"]').val(machineParameter.material_mixing_ratio_v);
+                        form.formAddMachine1.find('[name="material_mixing_ratio_r"]').val(machineParameter.material_mixing_ratio_r);
+                        form.formAddMachine1.find('[name="material_name"]').val(machineParameter.material_name);
+                        form.formAddMachine1.find('[name="color"]').val(machineParameter.color);
+                        form.formAddMachine1.find('[name="machine_no"]').val(machineParameter.machine_no);
+                        form.formAddMachine1.find('[name="shot_weight"]').val(machineParameter.shot_weight);
+                        form.formAddMachine1.find('[name="unit_weight"]').val(machineParameter.unit_weight);
+                        form.formAddMachine1.find('[name="date_created"]').val(machineParameter.created_at);
+                        if(machineParameter.is_accumulator === 1){
+                            form.formAddMachine1.find('#with').prop('checked',true);
+                            form.formAddMachine1.find('#without').prop('checked',false);
+                        }else{
+                            form.formAddMachine1.find('#with').prop('checked',false);
+                            form.formAddMachine1.find('#without').prop('checked',true);
+                        }
+
+                        if(machineParameter.dryer_used === 1){
+                            form.formAddMachine1.find('#dryerOven').prop('checked',true);
+                            form.formAddMachine1.find('#dryerDHD').prop('checked',false);
+                        }else{
+                            form.formAddMachine1.find('#dryerOven').prop('checked',false);
+                            form.formAddMachine1.find('#dryerDHD').prop('checked',true);
+                        }
+                        //Mold Close
+                        form.formAddMachine1.find('[name="hi_v"]').val(moldClose.hi_v);
+                        form.formAddMachine1.find('[name="mid_slow"]').val(moldClose.mid_slow);
+                        form.formAddMachine1.find('[name="low_l"]').val(moldClose.low_l);
+                        form.formAddMachine1.find('[name="obstacle_check_tm"]').val(moldClose.obstacle_check_tm);
+                        form.formAddMachine1.find('[name="slow_start"]').val(moldClose.slow_start);
+                        form.formAddMachine1.find('[name="slow_end"]').val(moldClose.slow_end);
+                        form.formAddMachine1.find('[name="lvlp"]').val(moldClose.lvlp);
+                        form.formAddMachine1.find('[name="hpcl"]').val(moldClose.hpcl);
+                        form.formAddMachine1.find('[name="mid_sl_p"]').val(moldClose.mid_sl_p);
+                        form.formAddMachine1.find('[name="low_p"]').val(moldClose.low_p);
+                        form.formAddMachine1.find('[name="hi_p"]').val(moldClose.hi_p);
+                        if(machineParameter.dryer_used === 1){
+                            form.formAddMachine1.find('#HiPton').prop('checked',true);
+                            form.formAddMachine1.find('#HiPPercent').prop('checked',false);
+                        }else{
+                            form.formAddMachine1.find('#HiPton').prop('checked',false);
+                            form.formAddMachine1.find('#HiPPercent').prop('checked',true);
+                        }
+                        //Ejector
+                        form.formAddMachine1.find('[name="ej_pres"]').val(ejectorLub.ej_pres);
+                        form.formAddMachine1.find('[name="fwd_ev1"]').val(ejectorLub.fwd_ev1);
+                        form.formAddMachine1.find('[name="fwd_ev2"]').val(ejectorLub.fwd_ev2);
+                        form.formAddMachine1.find('[name="fwd_stop"]').val(ejectorLub.fwd_stop);
+                        form.formAddMachine1.find('[name="bwd_stop"]').val(ejectorLub.bwd_stop);
+                        form.formAddMachine1.find('[name="count"]').val(ejectorLub.count);
+                        form.formAddMachine1.find('[name="pattern"]').val(ejectorLub.pattern);
+                        //Mold Open
+                        form.formAddMachine1.find('[name="open_end_v"]').val(moldOpen.open_end_v);
+                        form.formAddMachine1.find('[name="hi_velocity_2"]').val(moldOpen.hi_velocity_2);
+                        form.formAddMachine1.find('[name="hi_velocity_1_percent"]').val(moldOpen.hi_velocity_1_percent);
+                        form.formAddMachine1.find('[name="open_v"]').val(moldOpen.open_v);
+                        form.formAddMachine1.find('[name="tmp_stop_time"]').val(moldOpen.tmp_stop_time);
+                        form.formAddMachine1.find('[name="open_stop"]').val(moldOpen.open_stop);
+                        form.formAddMachine1.find('[name="low_distance"]').val(moldOpen.low_distance);
+                        form.formAddMachine1.find('[name="hi_velocity_1mm"]').val(moldOpen.hi_velocity_1mm);
+                        form.formAddMachine1.find('[name="tmp_stop_pos"]').val(moldOpen.tmp_stop_pos);
+                        //Heater
+                        form.formAddMachine1.find('[name="hot_sprue_set"]').val(heater.hot_sprue_set);
+                        form.formAddMachine1.find('[name="nozzle_set"]').val(heater.nozzle_set);
+                        form.formAddMachine1.find('[name="front_set"]').val(heater.front_set);
+                        form.formAddMachine1.find('[name="mid_set"]').val(heater.mid_set);
+                        form.formAddMachine1.find('[name="rear_set"]').val(heater.rear_set);
+                        form.formAddMachine1.find('[name="mold_set"]').val(heater.mold_set);
+                        form.formAddMachine1.find('[name="hot_sprue_actual"]').val(heater.hot_sprue_actual);
+                        form.formAddMachine1.find('[name="front_actual"]').val(heater.front_actual);
+                        form.formAddMachine1.find('[name="nozzle_actual"]').val(heater.nozzle_actual);
+                        form.formAddMachine1.find('[name="mid_actual"]').val(heater.mid_actual);
+                        form.formAddMachine1.find('[name="rear_actual"]').val(heater.rear_actual);
+                        form.formAddMachine1.find('[name="mold_one_set"]').val(heater.mold_one_set);
+                        form.formAddMachine1.find('[name="mold_two_set"]').val(heater.mold_two_set);
+                        form.formAddMachine1.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
+                        form.formAddMachine1.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
+                    },error: function (data, xhr, status){
+                       toastr.error(`Error: ${data.status}`);
+                    }
+                });
+            }
+
+            $(tbl.tableMachineParameter_form1).on('click','#btnEditMachineParameter', function () {
+                let machineParameterId = $(this).attr('machine-parameter-id');
+                editMachineParameter(machineParameterId);
             });
 
         });
