@@ -62,7 +62,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/get_data_for_dashboard','getDataForDashboard')->name('get_data_for_dashboard');
     Route::get('/get_login_user','getUserLogin')->name('get_login_user');
 });
-// Route::get('/view_machine_parameter', [MachineParameterController::class, 'viewMachineParameter'])->name('view_machine_parameter');
+// Route::get('/view_machine_parameter', [MachineParameterController::class, 'viewMachin
 /**
  * MACHINE CONTROLLER
  */
@@ -72,19 +72,20 @@ Route::controller(MachineController::class)->group(function () {
     Route::get('/get_machine_details', 'getMachineById')->name('get_machine_details');
     Route::get('/edit_machine_status', 'editMachineStatus')->name('edit_machine_status');
     Route::get('/reactivate_machine', 'restoreMachineStatus')->name('reactivate_machine');
-
-
 });
 
 Route::controller(MachineParameterController::class)->group(function () {
     Route::get('/get_machine_name_form1','getMachineDetailsForm1')->name('get_machine_name_form1');
     Route::get('/get_machine_name_form2','getMachineDetailsForm2')->name('get_machine_name_form2');
-});
-Route::controller(MachineParameterController::class)->group(function () {
     Route::post('/save_machine_one', 'saveMachineOne')->name('save_machine_one');
+    Route::post('/save_machine_two', 'saveMachineTwo')->name('save_machine_two');
 
     Route::get('/load_machine_parameter_one', 'loadMachineParameterOne')->name('load_machine_parameter_one');
+    Route::get('/load_machine_parameter_two', 'loadMachineParameterTwo')->name('load_machine_parameter_two');
     Route::get('/edit_machine_parameter', 'editMachineParameter')->name('edit_machine_parameter');
+    Route::get('/edit_machine_parameter_two', 'editMachineParameterTwo')->name('edit_machine_parameter_two');
+
+    //
 });
 //
 

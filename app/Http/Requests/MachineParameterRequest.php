@@ -25,7 +25,7 @@ class MachineParameterRequest extends FormRequest
     {
         return [
             'machine_id' => 'required',
-            'is_accumulator' => 'required',
+            // 'is_accumulator' => 'required',
             'device_name' => 'required',
             'no_of_cavity' => ['required','integer'],
             'material_mixing_ratio_v' => 'required',

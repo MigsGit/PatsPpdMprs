@@ -28,11 +28,11 @@ class MoldOpenRequest extends FormRequest
             'hi_velocity_2' => ['required','numeric'],
             'hi_velocity_1_percent' => ['required','numeric'],
             'open_v' => ['required','numeric'],
-            'tmp_stop_time' => ['required','numeric'],
+            // 'tmp_stop_time' => ['required','numeric'],
             'open_stop' => ['required','numeric'],
             'low_distance' => ['required','numeric'],
             'hi_velocity_1mm' => ['required','numeric'],
-            'tmp_stop_pos' => ['required','numeric'],
+            // 'tmp_stop_pos' => ['required','numeric'],
             /*
                 open_end_v:
                 hi_velocity_2:

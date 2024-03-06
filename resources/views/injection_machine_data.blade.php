@@ -72,6 +72,7 @@
                                                     <tr style="text-align:center">
                                                         <th>Action</th>
                                                         <th>Status</th>
+                                                        <th>Machine Name</th>
                                                         <th>Device Name</th>
                                                         <th>Material Name</th>
                                                         <th>Machine No.</th>
@@ -106,7 +107,7 @@
                                 <div class="card-body">
                                     <!-- For User Id -->
                         {{----}}
-                                <input type="hidden" name="machine_parameter_id" id="machineParameterId">
+                                <input type="text" name="machine_parameter_id" id="machineParameterId">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4">
                                             <label for="selectMachine" class="form-label"> Machine<span class="text-danger" title="Required">*</span></label>
@@ -119,10 +120,10 @@
                                         <div class="col-md-6 col-lg-4">
                                             <label class="form-label">Accumulator<span class="text-danger" title="Required">*</span></label>
                                             <div>
-                                                <input type="radio" id="with" name="is_accumulator" value="0">
+                                                <input type="radio" id="with" name="is_accumulator" value="1">
                                                 <label for="with">With</label>
                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                <input type="radio" id="without" name="is_accumulator" value="1">
+                                                <input type="radio" id="without" name="is_accumulator" value="2">
                                                 <label for="without">Without</label>
                                             </div>
                                         </div>
@@ -147,7 +148,6 @@
                                                 <input min="0" type="number" class="form-control" name="material_mixing_ratio_r" id="textMaterialMixingRatio" placeholder=" % R">
                                             </div>
                                         </div>
-
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textMaterialName" class="form-label">Material Name<span class="text-danger" title="Required">*</span></label>
                                             <input type="text" class="form-control" name="material_name" id="textMaterialName" placeholder="Material Name">
@@ -158,18 +158,16 @@
                                             <input type="text" class="form-control" name="color" id="textColor" placeholder="Color">
 
                                         </div>
-
                                         <div class="col-md-6 col-lg-4">
                                             <label class="form-label">Dryer Used<span class="text-danger" title="Required">*</span></label>
                                             <div>
-                                                <input type="radio" id="dryerOven" name="dryer_used" value="0">
+                                                <input type="radio" id="dryerOven" name="dryer_used" value="1">
                                                 <label for="dryerOven">Oven</label>
                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                <input type="radio" id="dryerDHD" name="dryer_used" value="1">
+                                                <input type="radio" id="dryerDHD" name="dryer_used" value="2">
                                                 <label for="dryerDHD">DHD</label>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textMachineNo" class="form-label">Machine No.<span class="text-danger" title="Required">*</span></label>
                                             <input min="0" type="number" class="form-control" name="machine_no" id="textMachineNo" placeholder="Machine No.">
@@ -189,8 +187,7 @@
                                     <br>
 
                                     <div class="accordion" id="accordionExample">
-
-                                        <div class="card">
+                                        {{-- <div class="card">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link" type="button" id="moldCloseId"data-bs-toggle="collapse"data-bs-target="#moldClose" aria-expanded="true" aria-controls="moldClose">
@@ -201,7 +198,6 @@
 
                                                     <div id="moldClose" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                                         <div class="card-body">
-
                                                             <div class="row">
                                                                 <div class="col-md-6 col-lg-4">
                                                                     <label for="textHiV" class="form-label">HI V.<span class="text-danger" title="Required">*</span></label>
@@ -258,10 +254,10 @@
 
                                                                 <div class="col-md-6 col-lg-4 mt-5">
                                                                     <div>
-                                                                        <input type="radio" id="HiPton" name="hi_p_unit" value="0">
+                                                                        <input type="radio" id="HiPton" name="hi_p_unit" value="1">
                                                                         <label for="HiPton">Ton</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="HiPPercent" name="hi_p_unit" value="1">
+                                                                        <input type="radio" id="HiPPercent" name="hi_p_unit" value="2">
                                                                         <label for="HiPPercent">%</label>
                                                                     </div>
                                                                 </div>
@@ -269,52 +265,53 @@
                                                     </div>
                                                 </div>
                                         </div>
-                                    <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    EJECTOR
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                <div class="card-body">
 
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textEjPres" class="form-label">EJ PRES<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="ej_pres" id="textEjPres" placeholder="%">
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textFwdEv1" class="form-label">FWD EV1<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="fwd_ev1" id="textFwdEv1" placeholder="%">
+                                        <div class="card">
+                                                <div class="card-header" id="headingTwo">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        EJECTOR
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body">
 
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textFwdEv2" class="form-label">FWD EV2<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="fwd_ev2" id="textFwdEv2" placeholder="%">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textEjPres" class="form-label">EJ PRES<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="ej_pres" id="textEjPres" placeholder="%">
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textFwdEv1" class="form-label">FWD EV1<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="fwd_ev1" id="textFwdEv1" placeholder="%">
 
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textFwdEv2" class="form-label">FWD STOP<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="fwd_stop" id="textFwdStop" placeholder="mm">
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textBwdStop" class="form-label">BWD STOP<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="bwd_stop" id="textBwdStop" placeholder="mm">
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textCount" class="form-label">COUNT<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="count" id="textCount" placeholder="">
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <label for="textPattern" class="form-label">PATTERN<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="pattern" id="textPattern" placeholder="">
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textFwdEv2" class="form-label">FWD EV2<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="fwd_ev2" id="textFwdEv2" placeholder="%">
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textFwdEv2" class="form-label">FWD STOP<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="fwd_stop" id="textFwdStop" placeholder="mm">
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textBwdStop" class="form-label">BWD STOP<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="bwd_stop" id="textBwdStop" placeholder="mm">
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textCount" class="form-label">COUNT<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="count" id="textCount" placeholder="">
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="textPattern" class="form-label">PATTERN<span class="text-danger" title="Required">*</span></label>
+                                                                <input min="0" type="number" class="form-control" name="pattern" id="textPattern" placeholder="">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                             <div class="card">
                                             <div class="card-header" id="headingThree">
@@ -485,26 +482,335 @@
                                                         </div>
                                                     </div>
                                                     <br>
-                                                    {{--    <div class="row">
-                                                        <div class="col-md-6 col-lg-2" id="actualId">
+                                                </div>
+                                            </div>
+                                        </div> --}}
+
+                                        {{-- INJECTION VELOCITY --}}
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" type="button" id="injectionVelocityId"data-bs-toggle="collapse"data-bs-target="#injectionVelocity" aria-expanded="true" aria-controls="injectionVelocity">
+                                                        INJECTION VELOCITY
+                                                        </button>
+                                                    </h5>
+                                            </div>
+                                                <div id="injectionVelocity" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="numInjectionTime" class="form-label">INJECTION TIME<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="injection_time" id="numInjectionTime">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="numCoolingTime" class="form-label">COOLING TIME<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="cooling_time" id="numCoolingTime">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="numCycleStart" class="form-label">CYCLE START<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="cycle_start" id="numCycleStart">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numV6" class="form-label">V6<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v6" id="numV6">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numV5" class="form-label">V5<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v5" id="numV5">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numV6" class="form-label">V4<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v6" id="numV6">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="nunumV3mLvlP" class="form-label">V3<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v3" id="numV3">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numV2" class="form-label">V2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v2" id="numV2">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numV1" class="form-label">V1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="v1" id="numV1">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3 mt-5">
+                                                                <div>
+                                                                    <input type="radio" id="v1Mm" name="v1_unit" value="1">
+                                                                    <label for="v1Mm">mm/S</label>
+                                                                    <div style="display: inline-block; margin-left:103px;"></div>
+                                                                    <input type="radio" id="v1Percent" name="v1_unit" value="2">
+                                                                    <label for="v1Percent">%</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numVelocNo" class="form-label">VELOC. NO<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="veloc_no" id="numVelocNo">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="hot_sprue_actual" id="textHotSprueActual" placeholder="">
+
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSv5" class="form-label">SV5<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sv5" id="numSv5">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSv5" class="form-label">SV4<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sv5" id="numSv5">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSv3" class="form-label">SV3<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sv3" id="numSv3">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSv2" class="form-label">SV2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sv2" id="numSv2">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSv1" class="form-label">SV1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sv1" id="numSv1">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSM" class="form-label">SM<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sm" id="numSM">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSd" class="form-label">SC<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sd" id="numSd">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="nozzle_actual" id="textNozzleActual" placeholder="">
+                                                        <div class="col-md-12 col-lg-3">
+                                                            <label for="numMidSlp" class="form-label">HOLDING PRESSURE</label>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="front_actual" id="textFrontActual" placeholder="">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPp3" class="form-label">Pp3<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pp3" id="numPp3">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPp2" class="form-label">Pp2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pp2" id="numPp2">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPp1" class="form-label">Pp1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pp1" id="numPp1">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3 mt-5">
+                                                                <div>
+                                                                    <input type="radio" id="pp1KgCm" name="pp1_unit" value="1">
+                                                                    <label for="pp1KgCm">kg/cm2</label>
+                                                                    <div style="display: inline-block; margin-left:103px;"></div>
+                                                                    <input type="radio" id="pp1Percent" name="pp1_unit" value="2">
+                                                                    <label for="pp1Percent">%</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPressNo" class="form-label">PRESS NO.<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="press_no" id="numPressNo">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPtp2" class="form-label">Tp2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="tp2" id="numTp2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numTp1" class="form-label">Tp1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="tp1" id="numTp1">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="mid_actual" id="textNozzleSet" placeholder="">
+
+                                                        <div class="row">
+                                                            <div class="col-md-5 col-md-3">
+                                                            </div>
+                                                            <div class="col-md-5 col-md-3">
+                                                                <label for="numMidSlp" class="form-label">POS</label>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-2">
-                                                            <input type="text" class="form-control" name="rear_actual" id="textFrontSet" placeholder="">
+
+                                                        <div class="row">
+                                                            <div class="col-md-5 col-md-3">
+                                                            </div>
+                                                            <div class="col-md-5 col-lg-3">
+                                                                <label for="numChangeMode" class="form-label">CHANGE MODE<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="change_mode" id="numChangeMode">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>--}}
+
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="numVS" class="form-label">VS<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="vs" id="numVS">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4">
+                                                                <label for="numPb" class="form-label">PB<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pb" id="numPb">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-4 mt-5">
+                                                                <div>
+                                                                    <input type="radio" id="pbKgCm" name="pb_unit" value="1">
+                                                                    <label for="pbKgCm">kg/cm2</label>
+                                                                    <div style="display: inline-block; margin-left:103px;"></div>
+                                                                    <input type="radio" id="pbPercent" name="pb_unit" value="2">
+                                                                    <label for="pbPercent">%</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPv3" class="form-label">Pv3<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pv3" id="numPv3">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPv2" class="form-label">Pv2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pv2" id="numPv2">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numPv1" class="form-label">Pv1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="pv1" id="numPv1">
+                                                                    <div class="input-group-prepend w-30">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3 mt-5">
+                                                                <div>
+                                                                    <input type="radio" id="pv1KgCm" name="pv1_unit" value="1">
+                                                                    <label for="pv1KgCm">kg/cm2</label>
+                                                                    <div style="display: inline-block; margin-left:103px;"></div>
+                                                                    <input type="radio" id="pv1Percent" name="pv1_unit" value="2">
+                                                                    <label for="pv1Percent">%</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSp2" class="form-label">Sp2<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sp2" id="numSp2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <label for="numSp1" class="form-label">Sp1<span class="text-danger" title="Required">*</span></label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input min="0" type="number" class="form-control" name="sp1" id="numSp1">
+                                                                    <div class="input-group-prepend w-30">
+                                                                        <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -512,7 +818,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                         <button type="submit" id="btnAddMachine1" class="btn btn-primary"><i id="ibtnAddMachine1Icon" class="fa fa-check"></i> Save</button>
@@ -528,7 +833,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title"><i class="fas fa-info-circle"></i>&nbsp;Add Machine Parameter</h4>
+                    <h4 class="modal-title"><i class="fas fa-info-circle"></i>&nbsp;Add Machine Parameter 2</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="formAddMachine2" autocomplete="off">
@@ -537,23 +842,392 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <!-- For User Id -->
+                                    <input type="text" name="machine_parameter_id" id="machineParameterId">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="selectMachine" class="form-label"> Machine<span class="text-danger" title="Required">*</span></label>
+                                            <div>
+                                                <select class="form-select select2" id="selectMachine2" name="machine_id">
+                                                    <!-- Auto Generated -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        {{-- wala --}}
+                                        <div class="col-md-6 col-lg-4 d-none">
+                                            <label class="form-label">Accumulator<span class="text-danger" title="Required">*</span></label>
+                                            <div>
+                                                <input type="radio" id="with" name="is_accumulator" value="1">
+                                                <label for="with">With</label>
+                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                <input type="radio" id="without" name="is_accumulator" value="2">
+                                                <label for="without">Without</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textDateCreated" class="form-label">Date Created<span class="text-danger" title="Required">*</span></label>
+                                            <input type="text" class="form-control" name="date_created" id="textDateCreated" placeholder="Auto-generated" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textDeviceName" class="form-label">Device Name<span class="text-danger" title="Required">*</span></label>
+                                            <input type="text" class="form-control" name="device_name" id="textDeviceName" placeholder="Device Name">
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textDeviceName" class="form-label">No. Of Cavity<span class="text-danger" title="Required">*</span></label>
+                                            <input min="0" type="number" class="form-control" name="no_of_cavity" id="textNoOfCavity" placeholder="No. Of Cavity">
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textMaterialMixingRatio" class="form-label">Material Mixing Ratio<span class="text-danger" title="Required">*</span></label>
+                                            <div class="d-flex">
+                                                <input min="0" type="number" class="form-control" name="material_mixing_ratio_v" id="textMaterialMixingRatio" placeholder=" % V">
+                                                <input min="0" type="number" class="form-control" name="material_mixing_ratio_r" id="textMaterialMixingRatio" placeholder=" % R">
+                                            </div>
+                                        </div>
 
-                                    <input type="hidden" name="machine_parameter2" id="machineParameterId2">
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textMaterialName" class="form-label">Material Name<span class="text-danger" title="Required">*</span></label>
+                                            <input type="text" class="form-control" name="material_name" id="textMaterialName" placeholder="Material Name">
 
-                                    <div class="mb-3">
-                                        <label for="selectMachine" class="form-label"> Machine<span class="text-danger" title="Required">*</span></label>
-                                        <select class="form-select select2" id="selectMachine2" name="machine_name">
-                                            <!-- Auto Generated -->
-                                        </select>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textColor" class="form-label">Color<span class="text-danger" title="Required">*</span></label>
+                                            <input type="text" class="form-control" name="color" id="textColor" placeholder="Color">
+
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <label class="form-label">Dryer Used<span class="text-danger" title="Required">*</span></label>
+                                            <div>
+                                                <input type="radio" id="dryerOven" name="dryer_used" value="0">
+                                                <label for="dryerOven">Oven</label>
+                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                <input type="radio" id="dryerDHD" name="dryer_used" value="1">
+                                                <label for="dryerDHD">DHD</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textMachineNo" class="form-label">Machine No.<span class="text-danger" title="Required">*</span></label>
+                                            <input min="0" type="number" class="form-control" name="machine_no" id="textMachineNo" placeholder="Machine No.">
+
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textShotWeight" class="form-label">Shot Weight<span class="text-danger" title="Required">*</span></label>
+                                            <input min="0" class="form-control" name="shot_weight" id="textShotWeight" placeholder="Shot Weight">
+
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <label for="textUnitWeight" class="form-label">Unit Weight<span class="text-danger" title="Required">*</span></label>
+                                            <input min="0" type="number" class="form-control" name="unit_weight" id="textUnitWeight" placeholder="Unit Weight">
+                                        </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="textDeviceName" class="form-label">Device Name<span class="text-danger" title="Required">*</span></label>
-                                        <input type="text" class="form-control" name="device_name" id="textDeviceName" placeholder="Device Name">
+                                    <br>
+
+                                    <div class="accordion" id="accordionExample2">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" type="button" id="moldCloseId"data-bs-toggle="collapse"data-bs-target="#moldClose" aria-expanded="true" aria-controls="moldClose">
+                                                        MOLD CLOSE
+                                                        </button>
+                                                    </h5>
+                                            </div>
+
+                                                    <div id="moldClose" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                        <div class="card-body">
+
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textHiV" class="form-label">HI V.<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="hi_v" id="textHiV" placeholder="%">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textMidSlow" class="form-label">MID SLOW<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="mid_slow" id="textMidSlow" placeholder="%">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textLowL" class="form-label">LOW L<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="low_l" id="textLowL" placeholder="%">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4 d-none">
+                                                                    {{-- wala --}}
+                                                                    <label for="textObstacleCheckTm" class="form-label">OBSTACLE CHECK TM<span class="text-danger" title="Required">*</span></label>
+                                                                    <input type="number" class="form-control" name="obstacle_check_tm" id="textObstacleCheckTm" placeholder="">
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textSlowStart" class="form-label">SlOW START<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="slow_start" id="textSlowStart" placeholder="mm">
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textSlowEnd" class="form-label">SLOW END<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="slow_end" id="textSlowEnd" placeholder="mm">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textLvlP" class="form-label">LVLP<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="lvlp" id="textLvlP" placeholder="mm">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textHpcl" class="form-label">HPCL<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="hpcl" id="textHpcl" placeholder="mm">
+                                                                </div>
+
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textMidSlp" class="form-label">MID SL P.<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="mid_sl_p" id="textMidSlp" placeholder="%">
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textLowP" class="form-label">LOW P.<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="low_p" id="textLowP" placeholder="%">
+
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4">
+                                                                    <label for="textHiP" class="form-label">HI P.<span class="text-danger" title="Required">*</span></label>
+                                                                    <input min="0" type="number" class="form-control" name="hi_p" id="textHiP">
+                                                                </div>
+
+                                                                <div class="col-md-6 col-lg-4 mt-5">
+                                                                    <div>
+                                                                        <input type="radio" id="HiPton" name="hi_p_unit" value="1">
+                                                                        <label for="HiPton">Ton</label>
+                                                                        <div style="display: inline-block; margin-left:103px;"></div>
+                                                                        <input type="radio" id="HiPPercent" name="hi_p_unit" value="2" checked>
+                                                                        <label for="HiPPercent">%</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                        </div>
                                     </div>
 
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                EJECTOR
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
 
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textEjPres" class="form-label">EJ PRES<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="ej_pres" id="textEjPres" placeholder="%">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textFwdEv1" class="form-label">FWD EV1<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="fwd_ev1" id="textFwdEv1" placeholder="%">
+
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textFwdEv2" class="form-label">FWD EV2<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="fwd_ev2" id="textFwdEv2" placeholder="%">
+
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textFwdEv2" class="form-label">FWD STOP<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="fwd_stop" id="textFwdStop" placeholder="mm">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textBwdStop" class="form-label">BWD STOP<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="bwd_stop" id="textBwdStop" placeholder="mm">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textCount" class="form-label">COUNT<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="count" id="textCount" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textPattern" class="form-label">PATTERN<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" class="form-control" name="pattern" id="textPattern" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                MOLD OPEN
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textOpenEndV" class="form-label">OPEN END V.<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="open_end_v" id="textOpenEndV" placeholder="mm">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textHiVelocity2" class="form-label">HI VELOCITY 2<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_2" id="textHiVelocity2" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textHiVelocity1Percent" class="form-label">HI VELOCITY 1<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_1_percent" id="c" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textOpenV" class="form-label">OPEN V<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="open_v" id="textOpenV" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 d-none">
+                                                        {{-- wala --}}
+                                                        <label for="textTmpStopTime" class="form-label">TMP STOP TIME<span class="text-danger" title="Required">*</span></label>
+                                                        <input type="number" step="0.01" class="form-control" name="tmp_stop_time" id="textTmpStopTime" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textOpenStop" class="form-label">OPEN STOP<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="open_stop" id="textOpenStop" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textLowDistance" class="form-label">LOW DISTANCE<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="low_distance" id="textLowDistance" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4">
+                                                        <label for="textHiVelocity1mm" class="form-label">HI VELOCITY 1<span class="text-danger" title="Required">*</span></label>
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_1mm" id="textHiVelocity1mm" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 d-none" >
+                                                        {{-- wala --}}
+                                                        <label for="textTmpStopPos" class="form-label">TMP STOP POS<span class="text-danger" title="Required">*</span></label>
+                                                        <input type="number" step="0.01" class="form-control" name="tmp_stop_pos" id="textTmpStopPos" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                                HEATER
+                                            </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textHotSprueSet" class="form-label">HOT SPRUE<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textNozzleSet" class="form-label">NOZZLE<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textFrontSet" class="form-label">FRONT<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textMidSet" class="form-label">MID<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textRearSet" class="form-label">REAR<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                </div>
+                                                <br>
+
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                        SET
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="hot_sprue_set" id="textHotSprueSet" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="nozzle_set" id="textNozzleSet" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="front_set" id="textFrontSet" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mid_set" id="textMidSet" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="rear_set" id="textRearSet" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <br>
+
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                        ACTUAL
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="hot_sprue_actual" id="textHotSprueActual" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="nozzle_actual" id="textNozzleActual" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="front_actual" id="textFrontActual" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mid_actual" id="textMidActual" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="rear_actual" id="textRearActual" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textHotSprueSet" class="form-label">MOLD 1<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <label for="textNozzleSet" class="form-label">MOLD 2<span class="text-danger" title="Required">*</span></label>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                        MOLD HEATER
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2" id="setId" style="font-weight: bold">
+                                                        SET
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mold_one_set" id="textHotSprueSet" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mold_two_set" id="textNozzleSet" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-2 mb-3" id="setId" style="font-weight: bold">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2 mb-3" id="setId" style="font-weight: bold">
+                                                        ACTUAL
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mold_one_actual" id="moldOneActual" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-2">
+                                                        <input min="0" type="number" step="0.01" class="form-control" name="mold_two_actual" id="moldTwoActual" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -579,29 +1253,20 @@
             // Initialize Select2 Elements
             // $('.bootstrap-5').select2();
 
-
             getMachine1($('#selectMachine1'));
             getMachine2($('#selectMachine2'));
-            const saveMachineOne = () => {
-                console.log('dsad');
-                $.ajax({
-                    type: 'POST',
-                    url: 'save_machine_one',
-                    data: $('#formAddMachine1').serialize(),
-                    dataType: 'json',
-                    success: function (response) {
-                        console.log(response);
-                    },error: function (data, xhr, status){
-                       toastr.error(`Error: ${data.status}`);
-                    }
-                });
-            }
 
-                $('#formAddMachine1').submit(function (e) {
-                    e.preventDefault();
-                    saveMachineOne();
-                });
-            dataTablesMachineParameter = $("#tableMachineParameter_form1").DataTable({
+
+            $('#formAddMachine1').submit(function (e) {
+                e.preventDefault();
+                saveMachineOne();
+            });
+            $('#formAddMachine2').submit(function (e) {
+                e.preventDefault();
+                saveMachineTwo();
+            });
+
+            dt.dataTablesMachineParameter = $("#tableMachineParameter_form1").DataTable({
                 "processing" : false,
                 "serverSide" : true,
                 "responsive": true,
@@ -622,112 +1287,39 @@
                     { "data" : "machine_no"},
                 ],
             });
-            console.log(tbl.tableMachineParameter_form1);
-            const editMachineParameter = (machineParameterId) => {
-                console.log('dassd',machineParameterId);
-                $.ajax({
-                    type: 'GET',
-                    url: 'edit_machine_parameter',
-                    data: {'machine_parameter_id' : machineParameterId},
-                    dataType: 'json',
-                    beforeSend: function(){
 
-                    },
-                    success: function (response) {
-                        let machineParameter = response.machine_parameter_detail;
-                        let moldClose = machineParameter.mold_close;
-                        let ejectorLub = machineParameter.ejector_lub;
-                        let moldOpen = machineParameter.mold_open;
-                        let heater = machineParameter.heater;
-                        //Machine Parameter
-                        form.formAddMachine1.find('[name="machine_id"]').val(machineParameter.machine_id);
-                        form.formAddMachine1.find('[name="device_name"]').val(machineParameter.device_name);
-                        form.formAddMachine1.find('[name="material_mixing_ratio_v"]').val(machineParameter.material_mixing_ratio_v);
-                        form.formAddMachine1.find('[name="material_mixing_ratio_r"]').val(machineParameter.material_mixing_ratio_r);
-                        form.formAddMachine1.find('[name="material_name"]').val(machineParameter.material_name);
-                        form.formAddMachine1.find('[name="color"]').val(machineParameter.color);
-                        form.formAddMachine1.find('[name="machine_no"]').val(machineParameter.machine_no);
-                        form.formAddMachine1.find('[name="shot_weight"]').val(machineParameter.shot_weight);
-                        form.formAddMachine1.find('[name="unit_weight"]').val(machineParameter.unit_weight);
-                        form.formAddMachine1.find('[name="date_created"]').val(machineParameter.created_at);
-                        if(machineParameter.is_accumulator === 1){
-                            form.formAddMachine1.find('#with').prop('checked',true);
-                            form.formAddMachine1.find('#without').prop('checked',false);
-                        }else{
-                            form.formAddMachine1.find('#with').prop('checked',false);
-                            form.formAddMachine1.find('#without').prop('checked',true);
-                        }
-
-                        if(machineParameter.dryer_used === 1){
-                            form.formAddMachine1.find('#dryerOven').prop('checked',true);
-                            form.formAddMachine1.find('#dryerDHD').prop('checked',false);
-                        }else{
-                            form.formAddMachine1.find('#dryerOven').prop('checked',false);
-                            form.formAddMachine1.find('#dryerDHD').prop('checked',true);
-                        }
-                        //Mold Close
-                        form.formAddMachine1.find('[name="hi_v"]').val(moldClose.hi_v);
-                        form.formAddMachine1.find('[name="mid_slow"]').val(moldClose.mid_slow);
-                        form.formAddMachine1.find('[name="low_l"]').val(moldClose.low_l);
-                        form.formAddMachine1.find('[name="obstacle_check_tm"]').val(moldClose.obstacle_check_tm);
-                        form.formAddMachine1.find('[name="slow_start"]').val(moldClose.slow_start);
-                        form.formAddMachine1.find('[name="slow_end"]').val(moldClose.slow_end);
-                        form.formAddMachine1.find('[name="lvlp"]').val(moldClose.lvlp);
-                        form.formAddMachine1.find('[name="hpcl"]').val(moldClose.hpcl);
-                        form.formAddMachine1.find('[name="mid_sl_p"]').val(moldClose.mid_sl_p);
-                        form.formAddMachine1.find('[name="low_p"]').val(moldClose.low_p);
-                        form.formAddMachine1.find('[name="hi_p"]').val(moldClose.hi_p);
-                        if(machineParameter.dryer_used === 1){
-                            form.formAddMachine1.find('#HiPton').prop('checked',true);
-                            form.formAddMachine1.find('#HiPPercent').prop('checked',false);
-                        }else{
-                            form.formAddMachine1.find('#HiPton').prop('checked',false);
-                            form.formAddMachine1.find('#HiPPercent').prop('checked',true);
-                        }
-                        //Ejector
-                        form.formAddMachine1.find('[name="ej_pres"]').val(ejectorLub.ej_pres);
-                        form.formAddMachine1.find('[name="fwd_ev1"]').val(ejectorLub.fwd_ev1);
-                        form.formAddMachine1.find('[name="fwd_ev2"]').val(ejectorLub.fwd_ev2);
-                        form.formAddMachine1.find('[name="fwd_stop"]').val(ejectorLub.fwd_stop);
-                        form.formAddMachine1.find('[name="bwd_stop"]').val(ejectorLub.bwd_stop);
-                        form.formAddMachine1.find('[name="count"]').val(ejectorLub.count);
-                        form.formAddMachine1.find('[name="pattern"]').val(ejectorLub.pattern);
-                        //Mold Open
-                        form.formAddMachine1.find('[name="open_end_v"]').val(moldOpen.open_end_v);
-                        form.formAddMachine1.find('[name="hi_velocity_2"]').val(moldOpen.hi_velocity_2);
-                        form.formAddMachine1.find('[name="hi_velocity_1_percent"]').val(moldOpen.hi_velocity_1_percent);
-                        form.formAddMachine1.find('[name="open_v"]').val(moldOpen.open_v);
-                        form.formAddMachine1.find('[name="tmp_stop_time"]').val(moldOpen.tmp_stop_time);
-                        form.formAddMachine1.find('[name="open_stop"]').val(moldOpen.open_stop);
-                        form.formAddMachine1.find('[name="low_distance"]').val(moldOpen.low_distance);
-                        form.formAddMachine1.find('[name="hi_velocity_1mm"]').val(moldOpen.hi_velocity_1mm);
-                        form.formAddMachine1.find('[name="tmp_stop_pos"]').val(moldOpen.tmp_stop_pos);
-                        //Heater
-                        form.formAddMachine1.find('[name="hot_sprue_set"]').val(heater.hot_sprue_set);
-                        form.formAddMachine1.find('[name="nozzle_set"]').val(heater.nozzle_set);
-                        form.formAddMachine1.find('[name="front_set"]').val(heater.front_set);
-                        form.formAddMachine1.find('[name="mid_set"]').val(heater.mid_set);
-                        form.formAddMachine1.find('[name="rear_set"]').val(heater.rear_set);
-                        form.formAddMachine1.find('[name="mold_set"]').val(heater.mold_set);
-                        form.formAddMachine1.find('[name="hot_sprue_actual"]').val(heater.hot_sprue_actual);
-                        form.formAddMachine1.find('[name="front_actual"]').val(heater.front_actual);
-                        form.formAddMachine1.find('[name="nozzle_actual"]').val(heater.nozzle_actual);
-                        form.formAddMachine1.find('[name="mid_actual"]').val(heater.mid_actual);
-                        form.formAddMachine1.find('[name="rear_actual"]').val(heater.rear_actual);
-                        form.formAddMachine1.find('[name="mold_one_set"]').val(heater.mold_one_set);
-                        form.formAddMachine1.find('[name="mold_two_set"]').val(heater.mold_two_set);
-                        form.formAddMachine1.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
-                        form.formAddMachine1.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
-                    },error: function (data, xhr, status){
-                       toastr.error(`Error: ${data.status}`);
-                    }
-                });
-            }
+            dt.dataTablesMachineParameter2 = $("#tableMachineParameter_form2").DataTable({
+                "processing" : false,
+                "serverSide" : true,
+                "responsive": true,
+                // "order": [[ 0, "desc" ],[ 4, "desc" ]],
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ user records",
+                    "lengthMenu": "Show _MENU_ user records",
+                },
+                "ajax" : {
+                    url: "load_machine_parameter_two",
+                },
+                "columns":[
+                    { "data" : "get_action", orderable:false, searchable:false},
+                    { "data" : "get_status"},
+                    { "data" : "machine_name"},
+                    { "data" : "material_name"},
+                    { "data" : "device_name"},
+                    { "data" : "machine_no"},
+                ],
+            });
 
             $(tbl.tableMachineParameter_form1).on('click','#btnEditMachineParameter', function () {
                 let machineParameterId = $(this).attr('machine-parameter-id');
                 editMachineParameter(machineParameterId);
             });
+
+            $(tbl.tableMachineParameter_form2).on('click','#btnEditMachineParameterTwo', function () {
+                let machineParameterId = $(this).attr('machine-parameter-id');
+                editMachineParameterTwo(machineParameterId);
+            });
+
 
         });
     </script>

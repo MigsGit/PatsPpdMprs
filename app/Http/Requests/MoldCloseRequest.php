@@ -27,7 +27,7 @@ class MoldCloseRequest extends FormRequest
             'hi_v' => ['required','numeric'],
             'mid_slow' => ['required','numeric'],
             'low_l' => ['required','numeric'],
-            'obstacle_check_tm' => ['required','numeric'],
+            // 'obstacle_check_tm' => ['required','numeric'],
             'slow_start' => ['required','numeric'],
             'slow_end' => ['required','numeric'],
             'lvlp' => ['required','numeric'],
