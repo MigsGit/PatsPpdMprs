@@ -18,6 +18,7 @@ use App\Http\Requests\MachineRequest;
 use App\Http\Requests\MoldOpenRequest;
 use App\Http\Requests\MoldCloseRequest;
 use App\Http\Requests\MachineParameterRequest;
+use App\Http\Requests\EnjectionVelocityRequest;
 use Illuminate\Database\Eloquent\Casts\ArrayObject;
 
 class MachineParameterController extends Controller
@@ -121,14 +122,14 @@ class MachineParameterController extends Controller
         // return $machine_details;
     }
 
-    public function saveMachineOne(
-        Request $request,MachineParameterRequest $machine_parameter_request,
-        MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
-        MoldOpenRequest $mold_open_request,HeaterRequest $heater_request
-    ){
-    // public function saveMachineOne(Request $request){
+    // public function saveMachineOne(
+    //     Request $request,MachineParameterRequest $machine_parameter_request,
+    //     MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
+    //     MoldOpenRequest $mold_open_request,HeaterRequest $heater_request
+    // ){
+    public function saveMachineOne(Request $request,EnjectionVelocityRequest $enjection_velocity_request){
         // return $machine_parameter_request->validated();
-        // return $request->all();
+        return $request->all();
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {

@@ -83,8 +83,8 @@
             data: $('#formAddMachine1').serialize(),
             dataType: 'json',
             success: function (response) {
-                $('#modalAddMachine1').modal('hide');
-                $('#formAddMachine1')[0].reset();
+                // $('#modalAddMachine1').modal('hide');
+                // $('#formAddMachine1')[0].reset();
                 toastr.success('Save Sucessfully');
                 dt.dataTablesMachineParameter.draw();
             },error: function (data, xhr, status){

@@ -528,7 +528,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numV6" class="form-label">V6<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v6" id="numV6">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v6" id="numV6">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -536,15 +536,15 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numV5" class="form-label">V5<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v5" id="numV5">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v5" id="numV5">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
-                                                                <label for="numV6" class="form-label">V4<span class="text-danger" title="Required">*</span></label>
+                                                                <label for="numV4" class="form-label">V4<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v6" id="numV6">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v4" id="numV4">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -553,7 +553,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="nunumV3mLvlP" class="form-label">V3<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v3" id="numV3">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v3" id="numV3">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -562,7 +562,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numV2" class="form-label">V2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v2" id="numV2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v2" id="numV2">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -571,7 +571,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numV1" class="form-label">V1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="v1" id="numV1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_v1" id="numV1">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3 mt-5">
@@ -586,7 +586,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numVelocNo" class="form-label">VELOC. NO<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="veloc_no" id="numVelocNo">
+                                                                    <input min="0" type="number" class="form-control" name="inj_veloc_no" id="numVelocNo">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -597,15 +597,15 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSv5" class="form-label">SV5<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sv5" id="numSv5">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sv5" id="numSv5">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
-                                                                <label for="numSv5" class="form-label">SV4<span class="text-danger" title="Required">*</span></label>
+                                                                <label for="numSv4" class="form-label">SV4<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sv5" id="numSv5">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sv4" id="numSv4">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -614,7 +614,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSv3" class="form-label">SV3<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sv3" id="numSv3">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sv3" id="numSv3">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -623,7 +623,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSv2" class="form-label">SV2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sv2" id="numSv2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sv2" id="numSv2">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -632,13 +632,13 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSv1" class="form-label">SV1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sv1" id="numSv1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sv1" id="numSv1">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSM" class="form-label">SM<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sm" id="numSM">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sm" id="numSM">
                                                                     <div class="input-group-prepend w-30">
                                                                         <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                     </div>
@@ -647,7 +647,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSd" class="form-label">SC<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sd" id="numSd">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sd" id="numSd">
                                                                     <div class="input-group-prepend w-30">
                                                                         <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                     </div>
@@ -661,7 +661,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPp3" class="form-label">Pp3<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pp3" id="numPp3">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pp3" id="numPp3">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -669,7 +669,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPp2" class="form-label">Pp2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pp2" id="numPp2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pp2" id="numPp2">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -678,24 +678,24 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPp1" class="form-label">Pp1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pp1" id="numPp1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pp1" id="numPp1">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3 mt-5">
                                                                 <div>
-                                                                    <input type="radio" id="pp1KgCm" name="pp1_unit" value="1">
+                                                                    <input type="radio" id="pp1KgCm" name="inj_pp1_unit" value="1">
                                                                     <label for="pp1KgCm">kg/cm2</label>
                                                                     <div style="display: inline-block; margin-left:103px;"></div>
-                                                                    <input type="radio" id="pp1Percent" name="pp1_unit" value="2">
+                                                                    <input type="radio" id="pp1Percent" name="inj_pp1_unit" value="2">
                                                                     <label for="pp1Percent">%</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPressNo" class="form-label">PRESS NO.<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="press_no" id="numPressNo">
+                                                                    <input min="0" type="number" class="form-control" name="inj_press_no" id="numPressNo">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -703,13 +703,13 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPtp2" class="form-label">Tp2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="tp2" id="numTp2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_tp2" id="numTp2">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numTp1" class="form-label">Tp1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="tp1" id="numTp1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_tp1" id="numTp1">
                                                                     <div class="input-group-prepend w-30">
                                                                         <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                     </div>
@@ -731,7 +731,7 @@
                                                             <div class="col-md-5 col-lg-3">
                                                                 <label for="numChangeMode" class="form-label">CHANGE MODE<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="change_mode" id="numChangeMode">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pos_change_mode" id="numChangeMode">
                                                                     <div class="input-group-prepend w-30">
                                                                         <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                     </div>
@@ -743,13 +743,13 @@
                                                             <div class="col-md-6 col-lg-4">
                                                                 <label for="numVS" class="form-label">VS<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="vs" id="numVS">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pos_vs" id="numVS">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-4">
                                                                 <label for="numPb" class="form-label">PB<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pb" id="numPb">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pos_pb" id="numPb">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-4 mt-5">
@@ -757,14 +757,14 @@
                                                                     <input type="radio" id="pbKgCm" name="pb_unit" value="1">
                                                                     <label for="pbKgCm">kg/cm2</label>
                                                                     <div style="display: inline-block; margin-left:103px;"></div>
-                                                                    <input type="radio" id="pbPercent" name="pb_unit" value="2">
+                                                                    <input type="radio" id="pbPercent" name="inj_pos_pb_unit" value="2">
                                                                     <label for="pbPercent">%</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPv3" class="form-label">Pv3<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pv3" id="numPv3">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pv3" id="numPv3">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -772,7 +772,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPv2" class="form-label">Pv2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pv2" id="numPv2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pv2" id="numPv2">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -780,7 +780,7 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numPv1" class="form-label">Pv1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="pv1" id="numPv1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_pv1" id="numPv1">
                                                                     <div class="input-group-prepend w-30">
                                                                     </div>
                                                                 </div>
@@ -797,13 +797,13 @@
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSp2" class="form-label">Sp2<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sp2" id="numSp2">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sp2" id="numSp2">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-lg-3">
                                                                 <label for="numSp1" class="form-label">Sp1<span class="text-danger" title="Required">*</span></label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input min="0" type="number" class="form-control" name="sp1" id="numSp1">
+                                                                    <input min="0" type="number" class="form-control" name="inj_sp1" id="numSp1">
                                                                     <div class="input-group-prepend w-30">
                                                                         <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                     </div>
