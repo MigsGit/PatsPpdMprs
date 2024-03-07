@@ -127,6 +127,10 @@
                 let ejectorLub = machineParameter.ejector_lub;
                 let moldOpen = machineParameter.mold_open;
                 let heater = machineParameter.heater;
+                let injectionVelocity = machineParameter.injection_velocity;
+                // console.log(injectionVelocity);
+                // return;
+
                 //Machine Parameter
                 form.formAddMachine1.find('[name="machine_parameter_id"]').val(machineParameter.id);
                 form.formAddMachine1.find('[name="machine_id"]').val(machineParameter.machine_id);
@@ -208,8 +212,44 @@
                 form.formAddMachine1.find('[name="mold_two_set"]').val(heater.mold_two_set);
                 form.formAddMachine1.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
                 form.formAddMachine1.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
+                //Injection Velocity
+                form.formAddMachine1.find('[name="injection_time"]').val(injectionVelocity.injection_time);
+                form.formAddMachine1.find('[name="cooling_time"]').val(injectionVelocity.cooling_time);
+                form.formAddMachine1.find('[name="cycle_start"]').val(injectionVelocity.cycle_start);
+                form.formAddMachine1.find('[name="inj_pp2"]').val(injectionVelocity.inj_pp2);
+                form.formAddMachine1.find('[name="inj_pp3"]').val(injectionVelocity.inj_pp3);
+                form.formAddMachine1.find('[name="inj_pp1"]').val(injectionVelocity.inj_pp1);
+                // form.formAddMachine1.find('[name="inj_pp1_unit"]').val(injectionVelocity.inj_pp1_unit);
+                // form.formAddMachine1.find('[name="inj_v1_unit"]').val(injectionVelocity.inj_v1_unit);
+                form.formAddMachine1.find('[name="inj_v1"]').val(injectionVelocity.inj_v1);
+                form.formAddMachine1.find('[name="inj_v2"]').val(injectionVelocity.inj_v2);
+                form.formAddMachine1.find('[name="inj_v3"]').val(injectionVelocity.inj_v3);
+                form.formAddMachine1.find('[name="inj_v4"]').val(injectionVelocity.inj_v4);
+                form.formAddMachine1.find('[name="inj_v6"]').val(injectionVelocity.inj_v6);
+                form.formAddMachine1.find('[name="inj_v5"]').val(injectionVelocity.inj_v5);
+                form.formAddMachine1.find('[name="inj_sv1"]').val(injectionVelocity.inj_sv1);
+                form.formAddMachine1.find('[name="inj_sv2"]').val(injectionVelocity.inj_sv2);
+                form.formAddMachine1.find('[name="inj_sv3"]').val(injectionVelocity.inj_sv3);
+                form.formAddMachine1.find('[name="inj_sv4"]').val(injectionVelocity.inj_sv4);
+                form.formAddMachine1.find('[name="inj_sv5"]').val(injectionVelocity.inj_sv5);
+                form.formAddMachine1.find('[name="inj_sm"]').val(injectionVelocity.inj_sm);
+                form.formAddMachine1.find('[name="inj_sd"]').val(injectionVelocity.inj_sd);
+                form.formAddMachine1.find('[name="inj_veloc_no"]').val(injectionVelocity.inj_veloc_no);
+                form.formAddMachine1.find('[name="inj_press_no"]').val(injectionVelocity.inj_press_no);
+                form.formAddMachine1.find('[name="inj_tp1"]').val(injectionVelocity.inj_tp1);
+                form.formAddMachine1.find('[name="inj_tp2"]').val(injectionVelocity.inj_tp2);
+                form.formAddMachine1.find('[name="inj_pos_change_mode"]').val(injectionVelocity.inj_pos_change_mode);
+                form.formAddMachine1.find('[name="inj_pos_vs"]').val(injectionVelocity.inj_pos_vs);
+                form.formAddMachine1.find('[name="inj_pos_pb"]').val(injectionVelocity.inj_pos_pb);
+                // form.formAddMachine1.find('[name="inj_pos_pb_unit"]').val(injectionVelocity.inj_pos_pb_unit);
+                // form.formAddMachine1.find('[name="inj_pv1_unit"]').val(injectionVelocity.inj_pv1_unit);
+                form.formAddMachine1.find('[name="inj_pv1"]').val(injectionVelocity.inj_pv1);
+                form.formAddMachine1.find('[name="inj_pv2"]').val(injectionVelocity.inj_pv2);
+                form.formAddMachine1.find('[name="inj_pv3"]').val(injectionVelocity.inj_pv3);
+                form.formAddMachine1.find('[name="inj_sp1"]').val(injectionVelocity.inj_sp1);
+                form.formAddMachine1.find('[name="inj_sp2"]').val(injectionVelocity.inj_sp2);
             },error: function (data, xhr, status){
-            toastr.error(`Error: ${data.status}`);
+                toastr.error(`Error: ${data.status}`);
             }
         });
     }

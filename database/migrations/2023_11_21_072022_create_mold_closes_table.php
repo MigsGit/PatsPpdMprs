@@ -19,7 +19,7 @@ class CreateMoldClosesTable extends Migration
             $table->string('hi_v')->nullable();
             $table->string('mid_slow')->nullable();
             $table->string('low_l')->nullable();
-            $table->string('obstacle_check_tm')->nullable();
+            $table->string('obstacle_check_tm')->nullable()->comment = 'Machine 2 w/out this column';
             $table->string('slow_start')->nullable();
             $table->string('slow_end')->nullable();
             $table->string('lvlp')->nullable();

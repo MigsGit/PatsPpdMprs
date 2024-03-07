@@ -29,4 +29,8 @@ class MachineParameter extends Model
     public function heater(){
         return $this->hasOne(Heater::class, 'machine_parameter_id', 'id')->where('deleted_at');
     }
+
+    public function injection_velocity(){
+        return $this->hasOne(InjectionVelocity::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
 }

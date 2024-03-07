@@ -576,10 +576,10 @@
                                                             </div>
                                                             <div class="col-md-6 col-lg-3 mt-5">
                                                                 <div>
-                                                                    <input type="radio" id="v1Mm" name="v1_unit" value="1">
+                                                                    <input type="radio" id="v1Mm" name="inj_v1_unit" value="1">
                                                                     <label for="v1Mm">mm/S</label>
                                                                     <div style="display: inline-block; margin-left:103px;"></div>
-                                                                    <input type="radio" id="v1Percent" name="v1_unit" value="2">
+                                                                    <input type="radio" id="v1Percent" name="inj_v1_unit" value="2">
                                                                     <label for="v1Percent">%</label>
                                                                 </div>
                                                             </div>
@@ -754,7 +754,7 @@
                                                             </div>
                                                             <div class="col-md-6 col-lg-4 mt-5">
                                                                 <div>
-                                                                    <input type="radio" id="pbKgCm" name="pb_unit" value="1">
+                                                                    <input type="radio" id="pbKgCm" name="inj_pos_pb_unit" value="1">
                                                                     <label for="pbKgCm">kg/cm2</label>
                                                                     <div style="display: inline-block; margin-left:103px;"></div>
                                                                     <input type="radio" id="pbPercent" name="inj_pos_pb_unit" value="2">
@@ -787,10 +787,10 @@
                                                             </div>
                                                             <div class="col-md-6 col-lg-3 mt-5">
                                                                 <div>
-                                                                    <input type="radio" id="pv1KgCm" name="pv1_unit" value="1">
+                                                                    <input type="radio" id="pv1KgCm" name="inj_pv1_unit" value="1">
                                                                     <label for="pv1KgCm">kg/cm2</label>
                                                                     <div style="display: inline-block; margin-left:103px;"></div>
-                                                                    <input type="radio" id="pv1Percent" name="pv1_unit" value="2">
+                                                                    <input type="radio" id="pv1Percent" name="inj_pv1_unit" value="2">
                                                                     <label for="pv1Percent">%</label>
                                                                 </div>
                                                             </div>
@@ -813,6 +813,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -848,11 +849,11 @@
                                             <label for="selectMachine" class="form-label"> Machine<span class="text-danger" title="Required">*</span></label>
                                             <div>
                                                 <select class="form-select select2" id="selectMachine2" name="machine_id">
-                                                    <!-- Auto Generated -->
+
                                                 </select>
                                             </div>
                                         </div>
-                                        {{-- wala --}}
+
                                         <div class="col-md-6 col-lg-4 d-none">
                                             <label class="form-label">Accumulator<span class="text-danger" title="Required">*</span></label>
                                             <div>
@@ -925,7 +926,7 @@
 
                                     <br>
 
-                                    <div class="accordion" id="accordionExample2">
+                                    {{-- <div class="accordion" id="accordionExample2">
                                         <div class="card">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
@@ -955,7 +956,7 @@
 
                                                                 </div>
                                                                 <div class="col-md-6 col-lg-4 d-none">
-                                                                    {{-- wala --}}
+
                                                                     <label for="textObstacleCheckTm" class="form-label">OBSTACLE CHECK TM<span class="text-danger" title="Required">*</span></label>
                                                                     <input type="number" class="form-control" name="obstacle_check_tm" id="textObstacleCheckTm" placeholder="">
                                                                 </div>
@@ -1083,7 +1084,7 @@
                                                         <input min="0" type="number" step="0.01" class="form-control" name="open_v" id="textOpenV" placeholder="">
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 d-none">
-                                                        {{-- wala --}}
+
                                                         <label for="textTmpStopTime" class="form-label">TMP STOP TIME<span class="text-danger" title="Required">*</span></label>
                                                         <input type="number" step="0.01" class="form-control" name="tmp_stop_time" id="textTmpStopTime" placeholder="">
                                                     </div>
@@ -1100,7 +1101,7 @@
                                                         <input min="0" type="number" step="0.01" class="form-control" name="hi_velocity_1mm" id="textHiVelocity1mm" placeholder="">
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 d-none" >
-                                                        {{-- wala --}}
+
                                                         <label for="textTmpStopPos" class="form-label">TMP STOP POS<span class="text-danger" title="Required">*</span></label>
                                                         <input type="number" step="0.01" class="form-control" name="tmp_stop_pos" id="textTmpStopPos" placeholder="">
                                                     </div>
@@ -1227,7 +1228,336 @@
                                                 <br>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
+
+                                    {{-- INJECTION VELOCITY --}}
+                                    {{-- <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" type="button" id="injectionVelocityId"data-bs-toggle="collapse"data-bs-target="#injectionVelocity" aria-expanded="true" aria-controls="injectionVelocity">
+                                                    INJECTION VELOCITY
+                                                    </button>
+                                                </h5>
+                                        </div>
+                                            <div id="injectionVelocity" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <label for="numInjectionTime" class="form-label">INJECTION TIME<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="injection_time" id="numInjectionTime">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <label for="numCoolingTime" class="form-label">COOLING TIME<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="cooling_time" id="numCoolingTime">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <label for="numCycleStart" class="form-label">CYCLE START<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="cycle_start" id="numCycleStart">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">sec</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numV6" class="form-label">V6<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v6" id="numV6">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numV5" class="form-label">V5<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v5" id="numV5">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numV4" class="form-label">V4<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v4" id="numV4">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="nunumV3mLvlP" class="form-label">V3<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v3" id="numV3">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numV2" class="form-label">V2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v2" id="numV2">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numV1" class="form-label">V1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_v1" id="numV1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3 mt-5">
+                                                            <div>
+                                                                <input type="radio" id="v1Mm" name="inj_v1_unit" value="1">
+                                                                <label for="v1Mm">mm/S</label>
+                                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                                <input type="radio" id="v1Percent" name="inj_v1_unit" value="2">
+                                                                <label for="v1Percent">%</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numVelocNo" class="form-label">VELOC. NO<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_veloc_no" id="numVelocNo">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSv5" class="form-label">SV5<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sv5" id="numSv5">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSv4" class="form-label">SV4<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sv4" id="numSv4">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSv3" class="form-label">SV3<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sv3" id="numSv3">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSv2" class="form-label">SV2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sv2" id="numSv2">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSv1" class="form-label">SV1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sv1" id="numSv1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSM" class="form-label">SM<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sm" id="numSM">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSd" class="form-label">SC<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sd" id="numSd">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-lg-3">
+                                                        <label for="numMidSlp" class="form-label">HOLDING PRESSURE</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPp3" class="form-label">Pp3<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pp3" id="numPp3">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPp2" class="form-label">Pp2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pp2" id="numPp2">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPp1" class="form-label">Pp1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pp1" id="numPp1">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3 mt-5">
+                                                            <div>
+                                                                <input type="radio" id="pp1KgCm" name="inj_pp1_unit" value="1">
+                                                                <label for="pp1KgCm">kg/cm2</label>
+                                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                                <input type="radio" id="pp1Percent" name="inj_pp1_unit" value="2">
+                                                                <label for="pp1Percent">%</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPressNo" class="form-label">PRESS NO.<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_press_no" id="numPressNo">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPtp2" class="form-label">Tp2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_tp2" id="numTp2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numTp1" class="form-label">Tp1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_tp1" id="numTp1">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-5 col-md-3">
+                                                        </div>
+                                                        <div class="col-md-5 col-md-3">
+                                                            <label for="numMidSlp" class="form-label">POS</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-5 col-md-3">
+                                                        </div>
+                                                        <div class="col-md-5 col-lg-3">
+                                                            <label for="numChangeMode" class="form-label">CHANGE MODE<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pos_change_mode" id="numChangeMode">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <label for="numVS" class="form-label">VS<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pos_vs" id="numVS">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <label for="numPb" class="form-label">PB<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pos_pb" id="numPb">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4 mt-5">
+                                                            <div>
+                                                                <input type="radio" id="pbKgCm" name="inj_pos_pb_unit" value="1">
+                                                                <label for="pbKgCm">kg/cm2</label>
+                                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                                <input type="radio" id="pbPercent" name="inj_pos_pb_unit" value="2">
+                                                                <label for="pbPercent">%</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPv3" class="form-label">Pv3<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pv3" id="numPv3">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPv2" class="form-label">Pv2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pv2" id="numPv2">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numPv1" class="form-label">Pv1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_pv1" id="numPv1">
+                                                                <div class="input-group-prepend w-30">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3 mt-5">
+                                                            <div>
+                                                                <input type="radio" id="pv1KgCm" name="inj_pv1_unit" value="1">
+                                                                <label for="pv1KgCm">kg/cm2</label>
+                                                                <div style="display: inline-block; margin-left:103px;"></div>
+                                                                <input type="radio" id="pv1Percent" name="inj_pv1_unit" value="2">
+                                                                <label for="pv1Percent">%</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSp2" class="form-label">Sp2<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sp2" id="numSp2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <label for="numSp1" class="form-label">Sp1<span class="text-danger" title="Required">*</span></label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <input min="0" type="number" class="form-control" name="inj_sp1" id="numSp1">
+                                                                <div class="input-group-prepend w-30">
+                                                                    <span class="input-group-text w-100" id="basic-addon1">mm</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div> --}}
+
                                 </div>
                             </div>
                         </div>

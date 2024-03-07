@@ -20,11 +20,11 @@ class CreateMoldOpensTable extends Migration
             $table->float('hi_velocity_2')->nullable();
             $table->float('hi_velocity_1_percent')->nullable();
             $table->float('open_v')->nullable();
-            $table->float('tmp_stop_time')->nullable();
+            $table->float('tmp_stop_time')->nullable()->comment = 'Machine 2 w/out this column';
             $table->float('open_stop')->nullable();
             $table->float('low_distance')->nullable();
             $table->float('hi_velocity_1mm')->nullable();
-            $table->float('tmp_stop_pos')->nullable();
+            $table->float('tmp_stop_pos')->nullable()->comment = 'Machine 2 w/out this column';
             $table->softDeletes();
             $table->timestamp('updated_at')->nullable();
             // Foreign key
