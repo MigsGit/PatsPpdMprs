@@ -75,20 +75,24 @@
             }
         });
     }
-
     const saveMachineOne = () => {
         $.ajax({
             type: 'POST',
             url: 'save_machine_one',
             data: $('#formAddMachine1').serialize(),
             dataType: 'json',
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            },
             success: function (response) {
-                // $('#modalAddMachine1').modal('hide');
-                // $('#formAddMachine1')[0].reset();
+                $('#modal-loading').modal('hide');
+                $('#modalAddMachine1').modal('hide');
+                $('#formAddMachine1')[0].reset();
                 toastr.success('Save Sucessfully');
                 dt.dataTablesMachineParameter.draw();
             },error: function (data, xhr, status){
-            toastr.error(`Error: ${data.status}`);
+                toastr.error(`Error: ${data.status}`);
+                $('#modal-loading').modal('hide');
             }
         });
     }
@@ -99,14 +103,19 @@
             url: 'save_machine_two',
             data: $('#formAddMachine2').serialize(),
             dataType: 'json',
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            },
             success: function (response) {
-                console.log(response);
+                $('#modal-loading').modal('hide');
                 $('#modalAddMachine2').modal('hide');
                 $('#formAddMachine2')[0].reset();
                 toastr.success('Save Sucessfully');
                 dt.dataTablesMachineParameter2.draw();
             },error: function (data, xhr, status){
-            toastr.error(`Error: ${data.status}`);
+                toastr.error(`Error: ${data.status}`);
+                $('#modal-loading').modal('hide');
+
             }
         });
     }
@@ -119,15 +128,17 @@
             data: {'machine_parameter_id' : machineParameterId},
             dataType: 'json',
             beforeSend: function(){
-
+                $('#modal-loading').modal('show');
             },
             success: function (response) {
+                $('#modal-loading').modal('hide');
                 let machineParameter = response.machine_parameter_detail;
                 let moldClose = machineParameter.mold_close;
                 let ejectorLub = machineParameter.ejector_lub;
                 let moldOpen = machineParameter.mold_open;
                 let heater = machineParameter.heater;
                 let injectionVelocity = machineParameter.injection_velocity;
+                // let injectionVelocity = machineParameter.injection_velocity;
                 // console.log(injectionVelocity);
                 // return;
 
@@ -219,8 +230,6 @@
                 form.formAddMachine1.find('[name="inj_pp2"]').val(injectionVelocity.inj_pp2);
                 form.formAddMachine1.find('[name="inj_pp3"]').val(injectionVelocity.inj_pp3);
                 form.formAddMachine1.find('[name="inj_pp1"]').val(injectionVelocity.inj_pp1);
-                // form.formAddMachine1.find('[name="inj_pp1_unit"]').val(injectionVelocity.inj_pp1_unit);
-                // form.formAddMachine1.find('[name="inj_v1_unit"]').val(injectionVelocity.inj_v1_unit);
                 form.formAddMachine1.find('[name="inj_v1"]').val(injectionVelocity.inj_v1);
                 form.formAddMachine1.find('[name="inj_v2"]').val(injectionVelocity.inj_v2);
                 form.formAddMachine1.find('[name="inj_v3"]').val(injectionVelocity.inj_v3);
@@ -241,15 +250,52 @@
                 form.formAddMachine1.find('[name="inj_pos_change_mode"]').val(injectionVelocity.inj_pos_change_mode);
                 form.formAddMachine1.find('[name="inj_pos_vs"]').val(injectionVelocity.inj_pos_vs);
                 form.formAddMachine1.find('[name="inj_pos_pb"]').val(injectionVelocity.inj_pos_pb);
-                // form.formAddMachine1.find('[name="inj_pos_pb_unit"]').val(injectionVelocity.inj_pos_pb_unit);
-                // form.formAddMachine1.find('[name="inj_pv1_unit"]').val(injectionVelocity.inj_pv1_unit);
                 form.formAddMachine1.find('[name="inj_pv1"]').val(injectionVelocity.inj_pv1);
                 form.formAddMachine1.find('[name="inj_pv2"]').val(injectionVelocity.inj_pv2);
                 form.formAddMachine1.find('[name="inj_pv3"]').val(injectionVelocity.inj_pv3);
                 form.formAddMachine1.find('[name="inj_sp1"]').val(injectionVelocity.inj_sp1);
                 form.formAddMachine1.find('[name="inj_sp2"]').val(injectionVelocity.inj_sp2);
+                console.log('injectionVelocity.inj_pp1_unit',injectionVelocity.inj_pp1_unit);
+                // form.formAddMachine1.find('[name="inj_pp1_unit"]').val(injectionVelocity.inj_pp1_unit);
+                // form.formAddMachine1.find('[name="inj_v1_unit"]').val(injectionVelocity.inj_v1_unit);
+                // form.formAddMachine1.find('[name="inj_pos_pb_unit"]').val(injectionVelocity.inj_pos_pb_unit);
+                // form.formAddMachine1.find('[name="inj_pv1_unit"]').val(injectionVelocity.inj_pv1_unit);
+
+                //Injection Velocity
+                form.formAddMachine1.find('[name="injection_time"]').val(injectionVelocity.injection_time);
+                form.formAddMachine1.find('[name="inj_tab_rv6"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv5"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv4"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv3"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv2"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv1"').val()
+                form.formAddMachine1.find('[name="inj_tab_rp3"').val()
+                form.formAddMachine1.find('[name="inj_tab_rp2"').val()
+                form.formAddMachine1.find('[name="inj_tab_rp1"').val()
+                form.formAddMachine1.find('[name="inj_tab_fill_time"').val()
+                form.formAddMachine1.find('[name="inj_tab_plastic_time"').val()
+                form.formAddMachine1.find('[name="inj_tab_cycle_time"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray_tm"').val()
+                form.formAddMachine1.find('[name="inj_tab_screw_most_fwd"').val()
+                form.formAddMachine1.find('[name="inj_tab_enj_end_pos"').val()
+                form.formAddMachine1.find('[name="inj_tab_airblow_start_time"').val()
+                form.formAddMachine1.find('[name="inj_tab_airblow_blow_time"').val()
+                form.formAddMachine1.find('[name="inj_tab_md_temp_requirement"').val()
+                form.formAddMachine1.find('[name="inj_tab_md_time_requirement"').val()
+                form.formAddMachine1.find('[name="inj_tab_md_temp_actual"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray_type"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray_mode"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray_side"').val()
+                form.formAddMachine1.find('[name="inj_tab_ccd"').val()
+                form.formAddMachine1.find('[name="inj_tab_esc"').val()
+                form.formAddMachine1.find('[name="inj_tab_spray_portion"').val()
+
+
+
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
+                $('#modal-loading').modal('hide');
             }
         });
     }
@@ -272,7 +318,6 @@
                     tmp_stop_time
                     tmp_stop_pos
                 */
-                // return;
                 let machineParameter = response.machine_parameter_detail;
                 let moldClose = machineParameter.mold_close;
                 let ejectorLub = machineParameter.ejector_lub;
