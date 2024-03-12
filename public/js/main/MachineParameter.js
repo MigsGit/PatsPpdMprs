@@ -107,11 +107,15 @@
                 $('#modal-loading').modal('show');
             },
             success: function (response) {
-                $('#modal-loading').modal('hide');
-                $('#modalAddMachine2').modal('hide');
-                $('#formAddMachine2')[0].reset();
-                toastr.success('Save Sucessfully');
-                dt.dataTablesMachineParameter2.draw();
+                if(response['is_success'] === 'true'){
+                    $('#modal-loading').modal('hide');
+                    $('#modalAddMachine2').modal('hide');
+                    $('#formAddMachine2')[0].reset();
+                    toastr.success('Save Sucessfully');
+                    dt.dataTablesMachineParameter2.draw();
+                }else{
+                    toastr.error('Saving Failed');
+                }
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
                 $('#modal-loading').modal('hide');
@@ -138,6 +142,7 @@
                 let moldOpen = machineParameter.mold_open;
                 let heater = machineParameter.heater;
                 let injectionVelocity = machineParameter.injection_velocity;
+                let injectionTab = machineParameter.injection_tab;
                 // let injectionVelocity = machineParameter.injection_velocity;
                 // console.log(injectionVelocity);
                 // return;
@@ -255,43 +260,41 @@
                 form.formAddMachine1.find('[name="inj_pv3"]').val(injectionVelocity.inj_pv3);
                 form.formAddMachine1.find('[name="inj_sp1"]').val(injectionVelocity.inj_sp1);
                 form.formAddMachine1.find('[name="inj_sp2"]').val(injectionVelocity.inj_sp2);
-                console.log('injectionVelocity.inj_pp1_unit',injectionVelocity.inj_pp1_unit);
+                // console.log('injectionVelocity.inj_pp1_unit',injectionVelocity.inj_pp1_unit);
                 // form.formAddMachine1.find('[name="inj_pp1_unit"]').val(injectionVelocity.inj_pp1_unit);
                 // form.formAddMachine1.find('[name="inj_v1_unit"]').val(injectionVelocity.inj_v1_unit);
                 // form.formAddMachine1.find('[name="inj_pos_pb_unit"]').val(injectionVelocity.inj_pos_pb_unit);
                 // form.formAddMachine1.find('[name="inj_pv1_unit"]').val(injectionVelocity.inj_pv1_unit);
 
                 //Injection Velocity
-                form.formAddMachine1.find('[name="injection_time"]').val(injectionVelocity.injection_time);
-                form.formAddMachine1.find('[name="inj_tab_rv6"').val()
-                form.formAddMachine1.find('[name="inj_tab_rv5"').val()
-                form.formAddMachine1.find('[name="inj_tab_rv4"').val()
-                form.formAddMachine1.find('[name="inj_tab_rv3"').val()
-                form.formAddMachine1.find('[name="inj_tab_rv2"').val()
-                form.formAddMachine1.find('[name="inj_tab_rv1"').val()
-                form.formAddMachine1.find('[name="inj_tab_rp3"').val()
-                form.formAddMachine1.find('[name="inj_tab_rp2"').val()
-                form.formAddMachine1.find('[name="inj_tab_rp1"').val()
-                form.formAddMachine1.find('[name="inj_tab_fill_time"').val()
-                form.formAddMachine1.find('[name="inj_tab_plastic_time"').val()
-                form.formAddMachine1.find('[name="inj_tab_cycle_time"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray_tm"').val()
-                form.formAddMachine1.find('[name="inj_tab_screw_most_fwd"').val()
-                form.formAddMachine1.find('[name="inj_tab_enj_end_pos"').val()
-                form.formAddMachine1.find('[name="inj_tab_airblow_start_time"').val()
-                form.formAddMachine1.find('[name="inj_tab_airblow_blow_time"').val()
-                form.formAddMachine1.find('[name="inj_tab_md_temp_requirement"').val()
-                form.formAddMachine1.find('[name="inj_tab_md_time_requirement"').val()
-                form.formAddMachine1.find('[name="inj_tab_md_temp_actual"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray_type"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray_mode"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray_side"').val()
-                form.formAddMachine1.find('[name="inj_tab_ccd"').val()
-                form.formAddMachine1.find('[name="inj_tab_esc"').val()
-                form.formAddMachine1.find('[name="inj_tab_spray_portion"').val()
+                form.formAddMachine1.find('[name="inj_tab_rv6"').val(injectionTab.inj_tab_rv6);
+                form.formAddMachine1.find('[name="inj_tab_rv5"').val(injectionTab.inj_tab_rv5);
+                form.formAddMachine1.find('[name="inj_tab_rv4"').val(injectionTab.inj_tab_rv4);
+                form.formAddMachine1.find('[name="inj_tab_rv3"').val(injectionTab.inj_tab_rv3);
+                form.formAddMachine1.find('[name="inj_tab_rv2"').val(injectionTab.inj_tab_rv2);
+                form.formAddMachine1.find('[name="inj_tab_rv1"').val(injectionTab.inj_tab_rv1);
+                form.formAddMachine1.find('[name="inj_tab_rp3"').val(injectionTab.inj_tab_rp3);
+                form.formAddMachine1.find('[name="inj_tab_rp2"').val(injectionTab.inj_tab_rp2);
+                form.formAddMachine1.find('[name="inj_tab_rp1"').val(injectionTab.inj_tab_rp1);
+                form.formAddMachine1.find('[name="inj_tab_fill_time"').val(injectionTab.inj_tab_fill_time);
+                form.formAddMachine1.find('[name="inj_tab_plastic_time"').val(injectionTab.inj_tab_plastic_time);
+                form.formAddMachine1.find('[name="inj_tab_cycle_time"').val(injectionTab.inj_tab_cycle_time);
+                form.formAddMachine1.find('[name="inj_tab_spray_tm"').val(injectionTab.inj_tab_spray_tm);
+                form.formAddMachine1.find('[name="inj_tab_screw_most_fwd"').val(injectionTab.inj_tab_screw_most_fwd);
+                form.formAddMachine1.find('[name="inj_tab_enj_end_pos"').val(injectionTab.inj_tab_enj_end_pos);
+                form.formAddMachine1.find('[name="inj_tab_airblow_start_time"').val(injectionTab.inj_tab_airblow_start_time);
+                form.formAddMachine1.find('[name="inj_tab_airblow_blow_time"').val(injectionTab.inj_tab_airblow_blow_time);
+                form.formAddMachine1.find('[name="inj_tab_md_temp_requirement"').val(injectionTab.inj_tab_md_temp_requirement);
+                form.formAddMachine1.find('[name="inj_tab_md_time_requirement"').val(injectionTab.inj_tab_md_time_requirement);
+                form.formAddMachine1.find('[name="inj_tab_md_temp_actual"').val(injectionTab.inj_tab_md_temp_actual);
 
-
+                // form.formAddMachine1.find('[name="inj_tab_spray_type"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_spray"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_spray_mode"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_spray_side"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_ccd"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_esc"').val(injectionTab.injection_time);
+                // form.formAddMachine1.find('[name="inj_tab_spray_portion"').val(injectionTab.injection_time);
 
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
@@ -323,6 +326,7 @@
                 let ejectorLub = machineParameter.ejector_lub;
                 let moldOpen = machineParameter.mold_open;
                 let heater = machineParameter.heater;
+                let support = machineParameter.support;
                 //Machine Parameter
                 form.formAddMachine2.find('[name="machine_parameter_id"]').val(machineParameter.id);
                 form.formAddMachine2.find('[name="machine_id"]').val(machineParameter.machine_id);
@@ -376,10 +380,11 @@
                 form.formAddMachine2.find('[name="hi_velocity_2"]').val(moldOpen.hi_velocity_2);
                 form.formAddMachine2.find('[name="hi_velocity_1_percent"]').val(moldOpen.hi_velocity_1_percent);
                 form.formAddMachine2.find('[name="open_v"]').val(moldOpen.open_v);
-                // form.formAddMachine2.find('[name="tmp_stop_time"]').val(moldOpen.tmp_stop_time);
                 form.formAddMachine2.find('[name="open_stop"]').val(moldOpen.open_stop);
                 form.formAddMachine2.find('[name="low_distance"]').val(moldOpen.low_distance);
                 form.formAddMachine2.find('[name="hi_velocity_1mm"]').val(moldOpen.hi_velocity_1mm);
+
+                // form.formAddMachine2.find('[name="tmp_stop_time"]').val(moldOpen.tmp_stop_time);
                 // form.formAddMachine2.find('[name="tmp_stop_pos"]').val(moldOpen.tmp_stop_pos);
                 //Heater
                 form.formAddMachine2.find('[name="hot_sprue_set"]').val(heater.hot_sprue_set);
@@ -397,6 +402,39 @@
                 form.formAddMachine2.find('[name="mold_two_set"]').val(heater.mold_two_set);
                 form.formAddMachine2.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
                 form.formAddMachine2.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
+                //Support
+                form.formAddMachine2.find('[name="support_v6"]').val(support.support_v6);
+                form.formAddMachine2.find('[name="support_v5"]').val(support.support_v5);
+                form.formAddMachine2.find('[name="support_v4"]').val(support.support_v4);
+                form.formAddMachine2.find('[name="support_v3"]').val(support.support_v3);
+                form.formAddMachine2.find('[name="support_v2"]').val(support.support_v2);
+                form.formAddMachine2.find('[name="support_v1"]').val(support.support_v1);
+                form.formAddMachine2.find('[name="support_pp3"]').val(support.support_pp3);
+                form.formAddMachine2.find('[name="support_pp2"]').val(support.support_pp2);
+                form.formAddMachine2.find('[name="support_pp1"]').val(support.support_pp1);
+                form.formAddMachine2.find('[name="support_fill_p"]').val(support.support_fill_p);
+                form.formAddMachine2.find('[name="support_bp"]').val(support.support_bp);
+                form.formAddMachine2.find('[name="support_fill_time"]').val(support.support_fill_time);
+                form.formAddMachine2.find('[name="support_plastic_time"]').val(support.support_plastic_time);
+                form.formAddMachine2.find('[name="support_cycle_time"]').val(support.support_cycle_time);
+                form.formAddMachine2.find('[name="support_spray_tm"]').val(support.support_spray_tm);
+                form.formAddMachine2.find('[name="support_screw_most_fwd"]').val(support.support_screw_most_fwd);
+                form.formAddMachine2.find('[name="support_enj_end_pos"]').val(support.support_enj_end_pos);
+                form.formAddMachine2.find('[name="support_airblow_start_time"]').val(support.support_airblow_start_time);
+                form.formAddMachine2.find('[name="support_airblow_blow_time"]').val(support.support_airblow_blow_time);
+                form.formAddMachine2.find('[name="support_md_temp_requirement"]').val(support.support_md_temp_requirement);
+                form.formAddMachine2.find('[name="support_md_time_requirement"]').val(support.support_md_time_requirement);
+                form.formAddMachine2.find('[name="support_md_temp_actual"]').val(support.support_md_temp_actual);
+
+                /*
+                    'support_spray_type' => ['required'],
+                    'support_spray' => ['required'],
+                    'support_spray_mode' => ['required'],
+                    'support_spray_side' => ['required'],
+                    'support_ccd' => ['required'],
+                    'support_esc' => ['required'],
+                    'support_spray_portion' => ['required'],
+                */
             },error: function (data, xhr, status){
             toastr.error(`Error: ${data.status}`);
             }

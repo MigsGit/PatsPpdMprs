@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Heater;
+use App\Models\Support;
 use App\Models\MoldOpen;
 use App\Models\MoldClose;
 use App\Models\EjectorLub;
@@ -37,5 +38,9 @@ class MachineParameter extends Model
 
     public function injection_tab(){
         return $this->hasOne(InjectionTab::class, 'machine_parameter_id', 'id')->where('deleted_at');
+    }
+
+    public function support(){
+        return $this->hasOne(Support::class, 'machine_parameter_id', 'id')->where('deleted_at');
     }
 }

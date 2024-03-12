@@ -884,11 +884,11 @@
                                                                 </div>
                                                                 <div class="col-md-6 col-lg-4">
                                                                     <label for="textHiP" class="form-label">PLAST TIME<span class="text-danger" title="Required">*</span></label>
-                                                                    <input min="0" type="number" class="form-control" name="inj_tab_plastic_time" id="injTabPlasticTime">
+                                                                    <input min="0" type="number" class="form-control" name="inj_tab_plastic_time" id="numInjTabPlasticTime">
                                                                 </div>
                                                                 <div class="col-md-6 col-lg-4">
                                                                     <label for="textHiP" class="form-label">CYCLE TIME<span class="text-danger" title="Required">*</span></label>
-                                                                    <input min="0" type="number" class="form-control" name="inj_tab_cycle_time" id="injTabCycleTime">
+                                                                    <input min="0" type="number" class="form-control" name="inj_tab_cycle_time" id="numInjTabCycleTime">
                                                                 </div>
                                                             </div>
 
@@ -896,47 +896,47 @@
                                                                 <div class="col-md-2 col-lg-2">
                                                                     <label for="textHiP" class="form-label">SPRAY TYPE<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabSprayTypeYP" name="inj_tab_spray_type" value="YP">
-                                                                        <label for="injTabSprayTypeYP">YP</label>
+                                                                        <input type="radio" id="radioInjTabSprayTypeYP" name="inj_tab_spray_type" value="YP">
+                                                                        <label for="radioInjTabSprayTypeYP">YP</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabSprayTypeZ" name="inj_tab_spray_type" value="Z">
-                                                                        <label for="injTabSprayTypeZ">Z</label>
+                                                                        <input type="radio" id="radioInjTabSprayTypeZ" name="inj_tab_spray_type" value="Z">
+                                                                        <label for="radioInjTabTypeZ">Z</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2 col-lg-2">
                                                                     <label for="textHiP" class="form-label">SPRAY<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabSprayYes" name="inj_tab_spray" value="YES">
-                                                                        <label for="injTabSprayYes">YES</label>
+                                                                        <input type="radio" id="radioInjTabSprayYes" name="inj_tab_spray" value="YES">
+                                                                        <label for="radioInjTabYes">YES</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabSprayNo" name="inj_tab_spray" value="NO">
-                                                                        <label for="injTabSprayNo">NO</label>
+                                                                        <input type="radio" id="radioInjTabSprayNo" name="inj_tab_spray" value="NO">
+                                                                        <label for="radioInjTabNo">NO</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2 col-lg-3">
                                                                     <label for="textHiP" class="form-label">SPRAY MODE<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabSprayModeManual" name="inj_tab_spray_mode" value="MANUAL">
-                                                                        <label for="injTabSprayModeManual">MANUAL</label>
+                                                                        <input type="radio" id="radioInjTabSprayModeManual" name="inj_tab_spray_mode" value="MANUAL">
+                                                                        <label for="radioInjTabModeManual">MANUAL</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabSprayModeAuto" name="inj_tab_spray_mode" value="AUTO">
-                                                                        <label for="injTabSprayModeAuto">AUTO</label>
+                                                                        <input type="radio" id="radioInjTabSprayModeAuto" name="inj_tab_spray_mode" value="AUTO">
+                                                                        <label for="radioInjTabModeAuto">AUTO</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2 col-lg-3">
                                                                     <label for="textHiP" class="form-label">SPRAY SIDE<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabSpraySideMove" name="inj_tab_spray_side" value="MOVE">
-                                                                        <label for="injTabSpraySideMove">MOVE</label>
+                                                                        <input type="radio" id="radioInjTabSpraySideMove" name="inj_tab_spray_side" value="MOVE">
+                                                                        <label for="radioInjTabSideMove">MOVE</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabSpraySideFixed" name="inj_tab_spray_side" value="FIXED">
-                                                                        <label for="injTabSpraySideFixed">FIXED</label>
+                                                                        <input type="radio" id="radioInjTabSpraySideFixed" name="inj_tab_spray_side" value="FIXED">
+                                                                        <label for="radioInjTabSideFixed">FIXED</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2 col-lg-2">
                                                                     <label for="textHiP" class="form-label">SPRAY TM<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_spray_tm" id="injTabSprayTm">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_spray_tm" id="numInjTabSprayTm">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">sec</span>
                                                                         </div>
@@ -948,7 +948,7 @@
                                                                 <div class="col-md-2 col-lg-2">
                                                                     <label for="textHiP" class="form-label">SCREW MOST FWD<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_screw_most_fwd" id="injTabScrewMostFwd">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_screw_most_fwd" id="numInjTabScrewMostFwd">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                         </div>
@@ -957,7 +957,7 @@
                                                                 <div class="col-md-2 col-lg-2">
                                                                     <label for="textHiP" class="form-label">ENJ. END POS.<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_enj_end_pos" id="injTabEnjEndPos">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_enj_end_pos" id="numInjTabEnjEndPos">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                         </div>
@@ -966,13 +966,13 @@
                                                                 <div class="col-md-2 col-lg-3">
                                                                     <label for="textHiP" class="form-label">AIRBLOW(START TIME)<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_airblow_start_time" id="injTabAirblowStartTimes">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_airblow_start_time" id="numInjTabAirblowStartTimes">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2 col-lg-3">
                                                                     <label for="textHiP" class="form-label">AIRBLOW(BLOW TIME)<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_airblow_blow_time" id="injTabAirblowBlowTime">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_airblow_blow_time" id="numInjTabAirblowBlowTime">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -981,31 +981,31 @@
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">CCD<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabCcdYes" name="inj_tab_ccd" value="YES">
+                                                                        <input type="radio" id="radioInjTabCcdYes" name="inj_tab_ccd" value="YES">
                                                                         <label for="injTabCcdYes">YES</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabCcdNo" name="inj_tab_ccd" value="NO">
+                                                                        <input type="radio" id="radioInjTabCcdNo" name="inj_tab_ccd" value="NO">
                                                                         <label for="injTabCcdNo">NO</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">EJ. SPIN CHECKER<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabEscYes" name="inj_tab_esc" value="YES">
+                                                                        <input type="radio" id="radioInjTabEscYes" name="inj_tab_esc" value="YES">
                                                                         <label for="injTabEscYes">YES</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabEscNo" name="inj_tab_esc" value="NO">
+                                                                        <input type="radio" id="radioInjTabEscNo" name="inj_tab_esc" value="NO">
                                                                         <label for="injTabEscNo">NO</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">SPRAY PORTION<span class="text-danger" title="Required">*</span></label>
                                                                     <div>
-                                                                        <input type="radio" id="injTabSprayPortionCenter" name="inj_tab_spray_portion" value="CENTER ONLY">
-                                                                        <label for="injTabSprayPortionCenter">CENTER ONLY</label>
+                                                                        <input type="radio" id="radioInjTabSprayPortionCenter" name="inj_tab_spray_portion" value="CENTER ONLY">
+                                                                        <label for="radioInjTabPortionCenter">CENTER ONLY</label>
                                                                         <div style="display: inline-block; margin-left:103px;"></div>
-                                                                        <input type="radio" id="injTabSprayPortionWhole" name="inj_tab_spray_portion" value="WHOLE AREA">
-                                                                        <label for="injTabSprayPortionWhole">WHOLE AREA</label>
+                                                                        <input type="radio" id="radioInjTabSprayPortionWhole" name="inj_tab_spray_portion" value="WHOLE AREA">
+                                                                        <label for="radioInjTabPortionWhole">WHOLE AREA</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1013,7 +1013,7 @@
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">MATERIAL DRY TEMP REQUIREMENT<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_temp_requirement" id="injTabMdTempRequirement">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_temp_requirement" id="numInjTabMdTempRequirement">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">°C</span>
                                                                         </div>
@@ -1022,7 +1022,7 @@
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">MATERIAL DRY TIME REQUIREMENT<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_time_requirement" id="injTabMdTimeRequirement">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_time_requirement" id="numInjTabMdTimeRequirement">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">HRS</span>
                                                                         </div>
@@ -1031,7 +1031,7 @@
                                                                 <div class="col-md-4 col-lg-4">
                                                                     <label for="textHiP" class="form-label">MATERIAL DRY TEMP ACTUAL<span class="text-danger" title="Required">*</span></label>
                                                                     <div class="input-group input-group-sm mb-3">
-                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_temp_actual" id="injTabMdTempActual">
+                                                                        <input min="0" type="number" class="form-control" name="inj_tab_md_temp_actual" id="numInjTabMdTempActual">
                                                                         <div class="input-group-prepend w-30">
                                                                             <span class="input-group-text w-100" id="basic-addon1">°C</span>
                                                                         </div>
@@ -1773,77 +1773,83 @@
                                         <div class="card-header" id="headingOne">
                                                 <h5 class="mb-0">
                                                     <button class="btn btn-link" type="button" id="injectionTabId"data-bs-toggle="collapse"data-bs-target="#injectionTab" aria-expanded="true" aria-controls="injectionTab">
-                                                    EJECTION TAB
+                                                    SUPPORT
                                                     </button>
                                                 </h5>
                                         </div>
                                             <div id="injectionTab" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                                 <div class="card-body">
                                                     <div class="col-md-12 col-lg-6">
-                                                        <label for="textHiV" class="form-label">VELOCITY SELECT</label>
+                                                        <label for="textHiV" class="form-label">MAX. INC-DEC V TM</label>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv6" class="form-label">RV6<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv6" id="numInjTabRv6" placeholder="%">
+                                                            <label for="numInjTabRv6" class="form-label">V6<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v6" id="numSupportV6" placeholder="%">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv5" class="form-label">RV5<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv5" id="numInjTabRv5" placeholder="%">
+                                                            <label for="numSupportV6" class="form-label">V5<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v5" id="numSupportV5" placeholder="%">
 
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv4" class="form-label">RV4<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv4" id="numInjTabRv4" placeholder="%">
+                                                            <label for="numSupportV6" class="form-label">V4<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v4" id="numSupportV4" placeholder="%">
 
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv3" class="form-label">RV3<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv3" id="numInjTabRv3" placeholder="">
+                                                            <label for="numSupportV6" class="form-label">V3<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v3" id="numSupportV3" placeholder="">
                                                         </div>
 
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv2" class="form-label">RV2<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv2" id="numInjTabRv2" placeholder="mm">
+                                                            <label for="numSupportV6" class="form-label">V2<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v2" id="numSupportV2" placeholder="mm">
                                                         </div>
                                                         <div class="col-md-6 col-lg-2">
-                                                            <label for="numInjTabRv1" class="form-label">RV1<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rv1" id="numInjTabRv1" placeholder="mm">
+                                                            <label for="numSupportV1" class="form-label">V1<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_v1" id="numSupportV1" placeholder="mm">
 
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 col-lg-6 mt-5">
-                                                        <label for="textHiV" class="form-label">PRESSURE SELECT</label>
+                                                        <label for="textHiV" class="form-label">MAX. INC-DEC P TM</label>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-4 col-lg-4">
-                                                            <label for="numInjTabRp1" class="form-label">RP3<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rp3" id="numInjTabRp3" placeholder="mm">
-
+                                                        <div class="col-md-3 col-lg-2">
+                                                            <label for="numSupportPp3" class="form-label">Pp3<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_pp3" id="numSupportPp3" placeholder="mm">
                                                         </div>
-                                                        <div class="col-md-4 col-lg-4">
-                                                            <label for="numInjTabRp2" class="form-label">RP2<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rp2" id="numInjTabRp2" placeholder="mm">
+                                                        <div class="col-md-3 col-lg-2">
+                                                            <label for="numSupportPp2" class="form-label">Pp2<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_pp2" id="numSupportPp2" placeholder="mm">
                                                         </div>
-
-                                                        <div class="col-md-4 col-lg-4">
-                                                            <label for="numInjTabRp1" class="form-label">RP1<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_rp1" id="numInjTabRp1" placeholder="%">
+                                                        <div class="col-md-3 col-lg-2">
+                                                            <label for="numSupportPp1" class="form-label">Pp1<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_pp1" id="numSupportPp1" placeholder="%">
+                                                        </div>
+                                                        <div class="col-md-3 col-lg-2">
+                                                            <label for="numSupportFillP" class="form-label">FILL P<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_fill_p" id="numSupportFillP" placeholder="%">
+                                                        </div>
+                                                        <div class="col-md-3 col-lg-2">
+                                                            <label for="numSupportBp" class="form-label">BP<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_bp" id="numSupportBp" placeholder="%">
                                                         </div>
                                                     </div>
                                                     <div class="row mt-5">
                                                         <div class="col-md-6 col-lg-4">
                                                             <label for="numInjTabFillTime" class="form-label">FILL TIME<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_fill_time" id="numInjTabFillTime" placeholder="%">
+                                                            <input min="0" type="number" class="form-control" name="support_fill_time" id="numInjTabFillTime" placeholder="%">
 
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
-                                                            <label for="textHiP" class="form-label">PLAST TIME<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_plastic_time" id="injTabPlasticTime">
+                                                            <label for="numSupportPlasticTime" class="form-label">PLAST TIME<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_plastic_time" id="numSupportPlasticTime">
                                                         </div>
                                                         <div class="col-md-6 col-lg-4">
-                                                            <label for="textHiP" class="form-label">CYCLE TIME<span class="text-danger" title="Required">*</span></label>
-                                                            <input min="0" type="number" class="form-control" name="inj_tab_cycle_time" id="injTabCycleTime">
+                                                            <label for="numSupportCycleTime" class="form-label">CYCLE TIME<span class="text-danger" title="Required">*</span></label>
+                                                            <input min="0" type="number" class="form-control" name="support_cycle_time" id="numSupportCycleTime">
                                                         </div>
                                                     </div>
 
@@ -1851,47 +1857,47 @@
                                                         <div class="col-md-2 col-lg-2">
                                                             <label for="textHiP" class="form-label">SPRAY TYPE<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabSprayTypeYP" name="inj_tab_spray_type" value="YP">
-                                                                <label for="injTabSprayTypeYP">YP</label>
+                                                                <input type="radio" id="radioSupportSprayTypeYP" name="support_spray_type" value="YP">
+                                                                <label for="radioSupportSprayTypeYP">YP</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabSprayTypeZ" name="inj_tab_spray_type" value="Z">
-                                                                <label for="injTabSprayTypeZ">Z</label>
+                                                                <input type="radio" id="radioSupportSprayTypeZ" name="support_spray_type" value="Z">
+                                                                <label for="radioSupportSprayTypeZ">Z</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-lg-2">
                                                             <label for="textHiP" class="form-label">SPRAY<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabSprayYes" name="inj_tab_spray" value="YES">
-                                                                <label for="injTabSprayYes">YES</label>
+                                                                <input type="radio" id="radioSupportSprayYes" name="support_spray" value="YES">
+                                                                <label for="radioSupportSprayYes">YES</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabSprayNo" name="inj_tab_spray" value="NO">
-                                                                <label for="injTabSprayNo">NO</label>
+                                                                <input type="radio" id="radioSupportSprayNo" name="support_spray" value="NO">
+                                                                <label for="radioSupportSprayNo">NO</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-lg-3">
                                                             <label for="textHiP" class="form-label">SPRAY MODE<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabSprayModeManual" name="inj_tab_spray_mode" value="MANUAL">
-                                                                <label for="injTabSprayModeManual">MANUAL</label>
+                                                                <input type="radio" id="radioSupportSprayModeManual" name="support_spray_mode" value="MANUAL">
+                                                                <label for="radioSupportSprayModeManual">MANUAL</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabSprayModeAuto" name="inj_tab_spray_mode" value="AUTO">
-                                                                <label for="injTabSprayModeAuto">AUTO</label>
+                                                                <input type="radio" id="radioSupportSprayModeAuto" name="support_spray_mode" value="AUTO">
+                                                                <label for="radioSupportSprayModeAuto">AUTO</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-lg-3">
                                                             <label for="textHiP" class="form-label">SPRAY SIDE<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabSpraySideMove" name="inj_tab_spray_side" value="MOVE">
-                                                                <label for="injTabSpraySideMove">MOVE</label>
+                                                                <input type="radio" id="radioSupportSpraySideMove" name="support_spray_side" value="MOVE">
+                                                                <label for="radioSupportSpraySideMove">MOVE</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabSpraySideFixed" name="inj_tab_spray_side" value="FIXED">
-                                                                <label for="injTabSpraySideFixed">FIXED</label>
+                                                                <input type="radio" id="radioSupportSpraySideFixed" name="support_spray_side" value="FIXED">
+                                                                <label for="radioSupportSpraySideFixed">FIXED</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-lg-2">
                                                             <label for="textHiP" class="form-label">SPRAY TM<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_spray_tm" id="injTabSprayTm">
+                                                                <input min="0" type="number" class="form-control" name="support_spray_tm" id="numSupportSprayTm">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">sec</span>
                                                                 </div>
@@ -1903,7 +1909,7 @@
                                                         <div class="col-md-2 col-lg-2">
                                                             <label for="textHiP" class="form-label">SCREW MOST FWD<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_screw_most_fwd" id="injTabScrewMostFwd">
+                                                                <input min="0" type="number" class="form-control" name="support_screw_most_fwd" id="numSupportScrewMostFwd">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                 </div>
@@ -1912,7 +1918,7 @@
                                                         <div class="col-md-2 col-lg-2">
                                                             <label for="textHiP" class="form-label">ENJ. END POS.<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_enj_end_pos" id="injTabEnjEndPos">
+                                                                <input min="0" type="number" class="form-control" name="support_enj_end_pos" id="numSupportEnjEndPos">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">mm</span>
                                                                 </div>
@@ -1921,13 +1927,13 @@
                                                         <div class="col-md-2 col-lg-3">
                                                             <label for="textHiP" class="form-label">AIRBLOW(START TIME)<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_airblow_start_time" id="injTabAirblowStartTimes">
+                                                                <input min="0" type="number" class="form-control" name="support_airblow_start_time" id="numSupportAirblowStartTime">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-lg-3">
                                                             <label for="textHiP" class="form-label">AIRBLOW(BLOW TIME)<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_airblow_blow_time" id="injTabAirblowBlowTime">
+                                                                <input min="0" type="number" class="form-control" name="support_airblow_blow_time" id="numSupportAirblowBlowTime">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1936,31 +1942,31 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">CCD<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabCcdYes" name="inj_tab_ccd" value="YES">
-                                                                <label for="injTabCcdYes">YES</label>
+                                                                <input type="radio" id="radioSupportCcdYes" name="support_ccd" value="YES">
+                                                                <label for="radioSupportCcdYes">YES</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabCcdNo" name="inj_tab_ccd" value="NO">
-                                                                <label for="injTabCcdNo">NO</label>
+                                                                <input type="radio" id="radioSupportCcdNo" name="support_ccd" value="NO">
+                                                                <label for="radioSupportCcdNo">NO</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">EJ. SPIN CHECKER<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabEscYes" name="inj_tab_esc" value="YES">
-                                                                <label for="injTabEscYes">YES</label>
+                                                                <input type="radio" id="radioSupportEscYes" name="support_esc" value="YES">
+                                                                <label for="radioSupportEscYes">YES</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabEscNo" name="inj_tab_esc" value="NO">
-                                                                <label for="injTabEscNo">NO</label>
+                                                                <input type="radio" id="radioSupportEscNo" name="support_esc" value="NO">
+                                                                <label for="radioSupportEscNo">NO</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">SPRAY PORTION<span class="text-danger" title="Required">*</span></label>
                                                             <div>
-                                                                <input type="radio" id="injTabSprayPortionCenter" name="inj_tab_spray_portion" value="CENTER ONLY">
-                                                                <label for="injTabSprayPortionCenter">CENTER ONLY</label>
+                                                                <input type="radio" id="radioSupportSprayPortionCenter" name="support_spray_portion" value="CENTER ONLY">
+                                                                <label for="radioSupportSprayPortionCenter">CENTER ONLY</label>
                                                                 <div style="display: inline-block; margin-left:103px;"></div>
-                                                                <input type="radio" id="injTabSprayPortionWhole" name="inj_tab_spray_portion" value="WHOLE AREA">
-                                                                <label for="injTabSprayPortionWhole">WHOLE AREA</label>
+                                                                <input type="radio" id="radioSupportSprayPortionWhole" name="support_spray_portion" value="WHOLE AREA">
+                                                                <label for="radioSupportSprayPortionWhole">WHOLE AREA</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1968,7 +1974,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">MATERIAL DRY TEMP REQUIREMENT<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_md_temp_requirement" id="injTabMdTempRequirement">
+                                                                <input min="0" type="number" class="form-control" name="support_md_temp_requirement" id="numSupportMdTempRequirement">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">°C</span>
                                                                 </div>
@@ -1977,7 +1983,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">MATERIAL DRY TIME REQUIREMENT<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_md_time_requirement" id="injTabMdTimeRequirement">
+                                                                <input min="0" type="number" class="form-control" name="support_md_time_requirement" id="numSupportMdTimeRequirement">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">HRS</span>
                                                                 </div>
@@ -1986,7 +1992,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <label for="textHiP" class="form-label">MATERIAL DRY TEMP ACTUAL<span class="text-danger" title="Required">*</span></label>
                                                             <div class="input-group input-group-sm mb-3">
-                                                                <input min="0" type="number" class="form-control" name="inj_tab_md_temp_actual" id="injTabMdTempActual">
+                                                                <input min="0" type="number" class="form-control" name="support_md_temp_actual" id="numSupportMdTempActual">
                                                                 <div class="input-group-prepend w-30">
                                                                     <span class="input-group-text w-100" id="basic-addon1">°C</span>
                                                                 </div>
