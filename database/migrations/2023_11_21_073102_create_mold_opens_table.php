@@ -20,13 +20,16 @@ class CreateMoldOpensTable extends Migration
             $table->float('hi_velocity_2')->nullable();
             $table->float('hi_velocity_1_percent')->nullable();
             $table->float('open_v')->nullable();
-            $table->float('tmp_stop_time')->nullable()->comment = 'Machine 2 w/out this column';
+            $table->float('tmp_stop_time')->nullable()->comment = 'NOTE: For Machine 1 only';
             $table->float('open_stop')->nullable();
             $table->float('low_distance')->nullable();
             $table->float('hi_velocity_1mm')->nullable();
-            $table->float('tmp_stop_pos')->nullable()->comment = 'Machine 2 w/out this column';
+            $table->float('tmp_stop_pos')->nullable()->comment = 'NOTE: For Machine 1 only';
+            // Defaults
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('last_updated_by')->nullable();
             $table->softDeletes();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
         });

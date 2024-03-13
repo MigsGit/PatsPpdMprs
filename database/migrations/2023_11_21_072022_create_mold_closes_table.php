@@ -19,7 +19,7 @@ class CreateMoldClosesTable extends Migration
             $table->string('hi_v')->nullable();
             $table->string('mid_slow')->nullable();
             $table->string('low_l')->nullable();
-            $table->string('obstacle_check_tm')->nullable()->comment = 'Machine 2 w/out this column';
+            $table->string('obstacle_check_tm')->nullable()->comment = 'NOTE: For Machine 1 only';
             $table->string('slow_start')->nullable();
             $table->string('slow_end')->nullable();
             $table->string('lvlp')->nullable();
@@ -28,8 +28,11 @@ class CreateMoldClosesTable extends Migration
             $table->string('low_p')->nullable();
             $table->string('hi_p')->nullable();
             $table->string('hi_p_unit')->nullable()->default(0)->comment = '1-Ton, 2-%';
+            // Defaults
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('last_updated_by')->nullable();
             $table->softDeletes();
-
+            $table->timestamps();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
         });

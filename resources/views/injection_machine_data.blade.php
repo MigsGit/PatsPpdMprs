@@ -174,8 +174,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textShotWeight" class="form-label">Shot Weight<span class="text-danger" title="Required">*</span></label>
-                                            <input min="0" class="form-control" name="shot_weight" id="textShotWeight" placeholder="Shot Weight">
-
+                                            <input type="number" min="0" class="form-control" name="shot_weight" id="textShotWeight" placeholder="Shot Weight">
                                         </div>
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textUnitWeight" class="form-label">Unit Weight<span class="text-danger" title="Required">*</span></label>
@@ -186,7 +185,7 @@
                                     <br>
 
                                     <div class="accordion" id="accordionExample">
-                                    {{--     <div class="card" id="MoldClose">
+                                        <div class="card" id="MoldClose">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link" type="button" id="moldCloseId"data-bs-toggle="collapse"data-bs-target="#moldClose" aria-expanded="true" aria-controls="moldClose">
@@ -483,9 +482,9 @@
                                                     <br>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
 
-                                        {{-- <div class="card" id="InjectionVelocity">
+                                        <div class="card" id="InjectionVelocity">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link" type="button" id="injectionVelocityId"data-bs-toggle="collapse"data-bs-target="#injectionVelocity" aria-expanded="true" aria-controls="injectionVelocity">
@@ -810,7 +809,7 @@
                                                         </div>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
 
                                         <div class="card" id="InjectionTab">
                                             <div class="card-header" id="headingOne">
@@ -1043,6 +1042,38 @@
                                                 </div>
                                         </div>
 
+                                        <div class="card" id="InjectionTabList">
+                                            <div class="card-body">
+                                                <div style="float: right;">
+                                                    <div class="text-right mt-4">
+                                                        <button type="button" class="btn btn-primary mb-3" id="btnAddInjectionTabList" data-bs-toggle="modal" data-bs-target="#modalAddInjectionTabList"><i class="fa fa-plus fa-md"></i> Add </button>
+                                                    </div>
+                                                </div> <br><br>
+                                                <div class="table-responsive">
+                                                    <table id="tableAddInjectionTabList" class="table table-sm table-bordered table-striped table-hover" style="width: 100%;">
+                                                        <thead>
+                                                            <tr align="center" style="text-align:center">
+                                                                <th rowspan="2"><i class="fa fa-cogs"></i></th>
+                                                                <th rowspan="2">MO DAY</th>
+                                                                <th rowspan="2">SHOT COUNT</th>
+                                                                <th rowspan="2">OPERATOR NAME</th>
+                                                                <th rowspan="2">MATERIAL TIME "IN"</th>
+                                                                <th colspan="2">PRODUCTION TIME</th>
+                                                                <th colspan="2">MATERIAL LOT NO.</th>
+                                                                <th rowspan="2">TOTAL MATERIAL DRING TIME</th>
+                                                                <th rowspan="2">REMARKS</th>
+                                                            </tr>
+                                                            <tr align="center" style="text-align:center">
+                                                                <th>Start</th>
+                                                                <th>End</th>
+                                                                <th>Virgin</th>
+                                                                <th>Recycled</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1144,7 +1175,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-4">
                                             <label for="textShotWeight" class="form-label">Shot Weight<span class="text-danger" title="Required">*</span></label>
-                                            <input min="0" class="form-control" name="shot_weight" id="textShotWeight" placeholder="Shot Weight">
+                                            <input type="number" min="0" class="form-control" name="shot_weight" id="textShotWeight" placeholder="Shot Weight">
 
                                         </div>
                                         <div class="col-md-6 col-lg-4">
@@ -1155,7 +1186,7 @@
 
                                     <br>
 
-                                    {{-- <div class="accordion" id="accordionExample2">
+                                    <div class="accordion" id="accordionExample2">
                                         <div class="card">
                                             <div class="card-header" id="headingOne">
                                                     <h5 class="mb-0">
@@ -1457,9 +1488,9 @@
                                                 <br>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
 
-                                    {{-- <div class="card" id="InjectionVelocity">
+                                    <div class="card" id="InjectionVelocity">
                                         <div class="card-header" id="headingOne">
                                                 <h5 class="mb-0">
                                                     <button class="btn btn-link" type="button" id="injectionVelocityId"data-bs-toggle="collapse"data-bs-target="#injectionVelocity" aria-expanded="true" aria-controls="injectionVelocity">
@@ -1766,10 +1797,9 @@
                                                     </div>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
 
-
-                                    <div class="card" id="InjectionTab">
+                                    <div class="card" id="Support">
                                         <div class="card-header" id="headingOne">
                                                 <h5 class="mb-0">
                                                     <button class="btn btn-link" type="button" id="injectionTabId"data-bs-toggle="collapse"data-bs-target="#injectionTab" aria-expanded="true" aria-controls="injectionTab">
@@ -2003,6 +2033,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -2047,6 +2078,7 @@
                 e.preventDefault();
                 saveMachineOne();
             });
+
             $('#formAddMachine2').submit(function (e) {
                 e.preventDefault();
                 saveMachineTwo();
@@ -2095,6 +2127,10 @@
                     { "data" : "machine_no"},
                 ],
             });
+
+            //tableAddInjectionTabList
+            
+
 
             $(tbl.tableMachineParameter_form1).on('click','#btnEditMachineParameter', function () {
                 let machineParameterId = $(this).attr('machine-parameter-id');

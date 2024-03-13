@@ -3,31 +3,30 @@
 namespace App\Http\Controllers;
 
 use stdClass;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Heater;
 use App\Models\Support;
 use App\Models\MoldOpen;
 use App\Models\MoldClose;
 use App\Models\EjectorLub;
 use App\Models\InjectionTab;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use App\Models\MachineParameter;
-use Yajra\DataTables\DataTables;
 use App\Models\InjectionVelocity;
 use App\Models\MachineManagement;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests\HeaterRequest;
 use App\Http\Requests\EjectorRequest;
 use App\Http\Requests\MachineRequest;
 use App\Http\Requests\SupportRequest;
 use App\Http\Requests\MoldOpenRequest;
 use App\Http\Requests\MoldCloseRequest;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\InjectionTabRequest;
 use App\Http\Requests\MachineParameterRequest;
 use App\Http\Requests\EnjectionVelocityRequest;
 use App\Http\Requests\InjectionVelocityRequest;
-use Illuminate\Database\Eloquent\Casts\ArrayObject;
 
 class MachineParameterController extends Controller
 {
@@ -130,15 +129,12 @@ class MachineParameterController extends Controller
         // return $machine_details;
     }
 
-    // public function saveMachineOne(
-    //     Request $request,MachineParameterRequest $machine_parameter_request,
-    //     MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
-    //     MoldOpenRequest $mold_open_request,HeaterRequest $heater_request,
-    //     InjectionVelocityRequest $injection_velocity_request
-    // ){
-    public function saveMachineOne(Request $request,MachineParameterRequest $machine_parameter_request,InjectionTabRequest $injection_tab_request){
-        // return $injection_tab_request->validated();
-        // return $request->all();
+    public function saveMachineOne(
+            Request $request,MachineParameterRequest $machine_parameter_request,
+            MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
+            MoldOpenRequest $mold_open_request,HeaterRequest $heater_request
+            ,InjectionVelocityRequest $injection_velocity_request,InjectionTabRequest $injection_tab_request
+        ){
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {
@@ -183,39 +179,36 @@ class MachineParameterController extends Controller
                 ]);
                 $mold_close_id = MoldClose::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
-                    'tmp_stop_pos' => $request->tmp_stop_pos,
+                    'obstacle_check_tm' => $request->obstacle_check_tm,
                 ]);
                 MoldClose::where('id',$mold_close_id)->update(
                     $mold_close_request->validated()
                 );
                 $ejector_lub_id = EjectorLub::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
-                    'tmp_stop_time' => $request->tmp_stop_time,
-                    'tmp_stop_pos' => $request->tmp_stop_pos,
+                    'created_at' => Carbon::now(),
                 ]);
                 EjectorLub::where('id',$ejector_lub_id)->update(
                     $ejector_request->validated()
                 );
                 $mold_open_id = MoldOpen::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'tmp_stop_time' => $request->tmp_stop_time,
+                    'tmp_stop_pos' => $request->tmp_stop_pos,
+                    'created_at' => Carbon::now(),
                 ]);
                 MoldOpen::where('id',$mold_open_id)->update(
                     $mold_open_request->validated()
                 );
                 $heater_id = Heater::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 Heater::where('id',$heater_id)->update(
                     $heater_request->validated()
                 );
                 $injection_velocity_id = InjectionVelocity::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
-                ]);
-                InjectionVelocity::where('id',$injection_velocity_id)->update(
-                    $injection_velocity_request->validated()
-                );
-                InjectionVelocity::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')
-                ->update([
                     'inj_veloc_no'=> $request->inj_veloc_no,
                     'inj_press_no'=> $request->inj_press_no,
                     'inj_pp1_unit' => $request->inj_pp1_unit,
@@ -223,13 +216,19 @@ class MachineParameterController extends Controller
                     'inj_tp2'=> $request->inj_tp2,
                     'inj_pos_pb_unit'=> $request->inj_pos_pb_unit,
                     'inj_pv1_unit'=> $request->inj_pv1_unit,
+                    'created_at' => Carbon::now(),
                 ]);
+                InjectionVelocity::where('id',$injection_velocity_id)->update(
+                    $injection_velocity_request->validated()
+                );
                 $injection_tab_id = InjectionTab::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 InjectionTab::where('id',$injection_tab_id)->update(
                     $injection_tab_request->validated()
                 );
+                /* */
             }
             // DB::rollback();
             DB::commit();
@@ -240,15 +239,12 @@ class MachineParameterController extends Controller
         }
     }
 
-    // public function saveMachineTwo(
-    //     Request $request,MachineParameterRequest $machine_parameter_request,
-    //     MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
-    //     MoldOpenRequest $mold_open_request,HeaterRequest $heater_request,
-        //SupportRequest $support_request
-    // ){
-    public function saveMachineTwo(Request $request,MachineParameterRequest $machine_parameter_request,SupportRequest $support_request){
-        // return $machine_parameter_request->validated();
-        // return $request->all();
+    public function saveMachineTwo(
+        Request $request,MachineParameterRequest $machine_parameter_request,
+        MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
+        MoldOpenRequest $mold_open_request,HeaterRequest $heater_request
+        ,InjectionVelocityRequest $injection_velocity_request,SupportRequest $support_request
+        ){
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {
@@ -276,38 +272,44 @@ class MachineParameterController extends Controller
                 }
                 $machine_parameter_id = MachineParameter::insertGetId($machine_parameter_request->validated());
                 MachineParameter::where('id',$machine_parameter_id)->whereNull('deleted_at')->update([
-                    'created_at' => date('Y-m-d H:i:s'),
+                    'created_at' => Carbon::now(),
                 ]);
                 $mold_close_id = MoldClose::insertGetId([
-                    'machine_parameter_id' => $machine_parameter_id
+                    'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 MoldClose::where('id',$mold_close_id)->update(
                     $mold_close_request->validated()
                 );
                 $ejector_lub_id = EjectorLub::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 EjectorLub::where('id',$ejector_lub_id)->update(
                     $ejector_request->validated()
                 );
                 $mold_open_id = MoldOpen::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 MoldOpen::where('id',$mold_open_id)->update(
                     $mold_open_request->validated()
                 );
                 $heater_id = Heater::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
+                    'created_at' => Carbon::now(),
                 ]);
                 Heater::where('id',$heater_id)->update(
                     $heater_request->validated()
                 );
+
                 $injection_velocity_id = InjectionVelocity::insertGetId([
                     'machine_parameter_id' => $machine_parameter_id,
-                    'inj_fill'=> $request->inj_veloc_no,
-                    'inj_hold'=> $request->inj_press_no,
-                    'inj_limit_v' => $request->inj_pp1_unit,
-                    'inj_limit_p'=> $request->inj_v1_unit,
+                    'inj_fill'=> $request->inj_fill,
+                    'inj_hold'=> $request->inj_hold,
+                    'inj_limit_v' => $request->inj_limit_v,
+                    'inj_limit_p'=> $request->inj_limit_p,
+                    'created_at' => Carbon::now(),
                 ]);
                 InjectionVelocity::where('id',$injection_velocity_id)->update(
                     $injection_velocity_request->validated()
@@ -319,6 +321,7 @@ class MachineParameterController extends Controller
                 Support::where('id',$support_id)->update(
                     $support_request->validated()
                 );
+
             }
             // DB::rollback();
             DB::commit();
@@ -335,7 +338,7 @@ class MachineParameterController extends Controller
         try {
             $machine_parameter_id = $request->machine_parameter_id;
 
-            return $machine_parameter_detail =  MachineParameter::with(
+            $machine_parameter_detail =  MachineParameter::with(
                 'mold_close','ejector_lub','mold_open',
                 'heater','injection_velocity','injection_tab',
             )->where('id',$machine_parameter_id)->get();
@@ -367,8 +370,4 @@ class MachineParameterController extends Controller
             return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
         }
     }
-
-
-
-
 }

@@ -23,8 +23,11 @@ class CreateEjectorLubsTable extends Migration
             $table->string('bwd_stop')->nullable();
             $table->string('count')->nullable();
             $table->string('pattern')->nullable();
+            // Defaults
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('last_updated_by')->nullable();
             $table->softDeletes();
-            $table->timestamp('updated_at');
+            $table->timestamps();
 
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table

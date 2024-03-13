@@ -21,7 +21,6 @@ class CreateHeatersTable extends Migration
             $table->float('front_set')->nullable();
             $table->float('mid_set')->nullable();
             $table->float('rear_set')->nullable();
-            $table->float('mold_set')->nullable();
             $table->float('hot_sprue_actual')->nullable();
             $table->float('nozzle_actual')->nullable();
             $table->float('front_actual')->nullable();
@@ -31,8 +30,11 @@ class CreateHeatersTable extends Migration
             $table->float('mold_two_set')->nullable();
             $table->float('mold_one_actual')->nullable();
             $table->float('mold_two_actual')->nullable();
+            // Defaults
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('last_updated_by')->nullable();
             $table->softDeletes();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
 

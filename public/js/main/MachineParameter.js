@@ -85,11 +85,15 @@
                 $('#modal-loading').modal('show');
             },
             success: function (response) {
-                $('#modal-loading').modal('hide');
-                $('#modalAddMachine1').modal('hide');
-                $('#formAddMachine1')[0].reset();
-                toastr.success('Save Sucessfully');
-                dt.dataTablesMachineParameter.draw();
+                if(response['is_success'] == 'true'){
+                    $('#modal-loading').modal('hide');
+                    $('#modalAddMachine1').modal('hide');
+                    $('#formAddMachine1')[0].reset();
+                    toastr.success('Save Sucessfully');
+                    dt.dataTablesMachineParameter.draw();
+                }else{
+                    toastr.error('Saving Failed');
+                }
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
                 $('#modal-loading').modal('hide');
@@ -228,6 +232,7 @@
                 form.formAddMachine1.find('[name="mold_two_set"]').val(heater.mold_two_set);
                 form.formAddMachine1.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
                 form.formAddMachine1.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
+            /*
                 //Injection Velocity
                 form.formAddMachine1.find('[name="injection_time"]').val(injectionVelocity.injection_time);
                 form.formAddMachine1.find('[name="cooling_time"]').val(injectionVelocity.cooling_time);
@@ -295,7 +300,7 @@
                 // form.formAddMachine1.find('[name="inj_tab_ccd"').val(injectionTab.injection_time);
                 // form.formAddMachine1.find('[name="inj_tab_esc"').val(injectionTab.injection_time);
                 // form.formAddMachine1.find('[name="inj_tab_spray_portion"').val(injectionTab.injection_time);
-
+            * */
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
                 $('#modal-loading').modal('hide');
@@ -383,7 +388,6 @@
                 form.formAddMachine2.find('[name="open_stop"]').val(moldOpen.open_stop);
                 form.formAddMachine2.find('[name="low_distance"]').val(moldOpen.low_distance);
                 form.formAddMachine2.find('[name="hi_velocity_1mm"]').val(moldOpen.hi_velocity_1mm);
-
                 // form.formAddMachine2.find('[name="tmp_stop_time"]').val(moldOpen.tmp_stop_time);
                 // form.formAddMachine2.find('[name="tmp_stop_pos"]').val(moldOpen.tmp_stop_pos);
                 //Heater
@@ -402,6 +406,7 @@
                 form.formAddMachine2.find('[name="mold_two_set"]').val(heater.mold_two_set);
                 form.formAddMachine2.find('[name="mold_one_actual"]').val(heater.mold_one_actual);
                 form.formAddMachine2.find('[name="mold_two_actual"]').val(heater.mold_two_actual);
+            /**
                 //Support
                 form.formAddMachine2.find('[name="support_v6"]').val(support.support_v6);
                 form.formAddMachine2.find('[name="support_v5"]').val(support.support_v5);
@@ -425,16 +430,18 @@
                 form.formAddMachine2.find('[name="support_md_temp_requirement"]').val(support.support_md_temp_requirement);
                 form.formAddMachine2.find('[name="support_md_time_requirement"]').val(support.support_md_time_requirement);
                 form.formAddMachine2.find('[name="support_md_temp_actual"]').val(support.support_md_temp_actual);
+            */
 
-                /*
-                    'support_spray_type' => ['required'],
-                    'support_spray' => ['required'],
-                    'support_spray_mode' => ['required'],
-                    'support_spray_side' => ['required'],
-                    'support_ccd' => ['required'],
-                    'support_esc' => ['required'],
-                    'support_spray_portion' => ['required'],
-                */
+            /*
+                'support_spray_type' => ['required'],
+                'support_spray' => ['required'],
+                'support_spray_mode' => ['required'],
+                'support_spray_side' => ['required'],
+                'support_ccd' => ['required'],
+                'support_esc' => ['required'],
+                'support_spray_portion' => ['required'],
+            */
+
             },error: function (data, xhr, status){
             toastr.error(`Error: ${data.status}`);
             }

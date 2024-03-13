@@ -48,7 +48,6 @@ class CreateInjectionTabsTable extends Migration
             $table->unsignedBigInteger('last_updated_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
-
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
 

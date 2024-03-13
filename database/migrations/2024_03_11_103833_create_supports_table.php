@@ -45,11 +45,11 @@ class CreateSupportsTable extends Migration
             $table->string('support_ccd')->nullable()->comment = '0-YES, 1-NO';
             $table->string('support_esc')->nullable()->comment = '0-YES, 1-NO';
             $table->string('support_spray_portion')->nullable()->comment = '0-CENTER ONLY, 1-WHOLE AREA';
-             // Defaults
-             $table->unsignedBigInteger('created_by')->nullable();
-             $table->unsignedBigInteger('last_updated_by')->nullable();
-             $table->softDeletes();
-             $table->timestamps();
+            // Defaults
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('last_updated_by')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
             // Foreign key
             $table->foreign('machine_parameter_id')->references('id')->on('machine_parameters'); // foreign id sa table, references id sa pagkukunan, on pagkukunan na table
 
