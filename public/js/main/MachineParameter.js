@@ -2,15 +2,18 @@
     const tbl = {
         tableMachineParameter_form1 : "#tableMachineParameter_form1",
         tableMachineParameter_form2 : "#tableMachineParameter_form2",
+        AddInjectionTabList : "#AddInjectionTabList",
     }
     const form = {
         formAddMachine1 : $('#formAddMachine1'),
         formAddMachine2 : $('#formAddMachine2'),
+        formInjectionTabList : $('#formInjectionTabList'),
     }
 
     const dt = {
         dataTablesMachineParameter : '',
         dataTablesMachineParameter2 : '',
+        dataTablesAddInjectionTabList : '',
     }
 
 
@@ -301,6 +304,7 @@
                 // form.formAddMachine1.find('[name="inj_tab_esc"').val(injectionTab.injection_time);
                 // form.formAddMachine1.find('[name="inj_tab_spray_portion"').val(injectionTab.injection_time);
             * */
+                dt.dataTablesInjectionTabList.draw();
             },error: function (data, xhr, status){
                 toastr.error(`Error: ${data.status}`);
                 $('#modal-loading').modal('hide');
@@ -441,7 +445,7 @@
                 'support_esc' => ['required'],
                 'support_spray_portion' => ['required'],
             */
-
+                dt.dataTablesInjectionTabList.draw();
             },error: function (data, xhr, status){
             toastr.error(`Error: ${data.status}`);
             }

@@ -16,7 +16,7 @@ class CreateMachineParametersTable extends Migration
         Schema::create('machine_parameters', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('machine_id')->unsigned();
-            $table->tinyInteger('is_accumulator')->nullable()->default(0)->comment = '->comment="NOTE: For Machine 1 only | 1-With, 2-Without';
+            $table->tinyInteger('is_accumulator')->nullable()->default(0)->comment = '->comment="+ | 1-With, 2-Without';
             $table->string('device_name')->nullable();
             $table->string('material_name')->nullable();
             $table->integer('machine_no')->nullable();

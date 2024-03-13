@@ -75,16 +75,20 @@ Route::controller(MachineController::class)->group(function () {
 });
 
 Route::controller(MachineParameterController::class)->group(function () {
-    Route::get('/get_machine_name_form1','getMachineDetailsForm1')->name('get_machine_name_form1');
-    Route::get('/get_machine_name_form2','getMachineDetailsForm2')->name('get_machine_name_form2');
     Route::post('/save_machine_one', 'saveMachineOne')->name('save_machine_one');
     Route::post('/save_machine_two', 'saveMachineTwo')->name('save_machine_two');
+    Route::post('/save_injection_tab_list', 'saveInjectionTabList')->name('save_injection_tab_list');
 
+
+
+    Route::get('/get_machine_name_form1','getMachineDetailsForm1')->name('get_machine_name_form1');
+    Route::get('/get_machine_name_form2','getMachineDetailsForm2')->name('get_machine_name_form2');
     Route::get('/load_machine_parameter_one', 'loadMachineParameterOne')->name('load_machine_parameter_one');
     Route::get('/load_machine_parameter_two', 'loadMachineParameterTwo')->name('load_machine_parameter_two');
     Route::get('/edit_machine_parameter', 'editMachineParameter')->name('edit_machine_parameter');
     Route::get('/edit_machine_parameter_two', 'editMachineParameterTwo')->name('edit_machine_parameter_two');
 
+    Route::get('/load_injection_tab_list', 'loadInjectionTabList')->name('load_injection_tab_list');
     //
 });
 //

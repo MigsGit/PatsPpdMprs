@@ -2053,10 +2053,144 @@
     <div class="modal" id="modal-loading" data-bs-keyboard="false" data-bs-backdrop="static">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
-            <div class="modal-body text-center">
-                <div class="loading-spinner mb-2"></div>
-                <div>Loading</div>
+                <div class="modal-body text-center">
+                    <div class="loading-spinner mb-2"></div>
+                    <div>Loading, please wait !</div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modalAddInjectionTabList" data-bs-keyboard="false" data-bs-backdrop="static">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Injection Tab List
+                    </h4>
+                </div>
+                <form id="formInjectionTabList">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 border">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">Machine Parameter ID</span>
+                                            </div>
+                                            <input type="number" class="form-control form-control-sm" name="machine_parameter_id" id="numMachineParameterId" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">Injection Tab List ID</span>
+                                            </div>
+                                            <input type="number" class="form-control form-control-sm" name="injection_tab_list_id" id="numInjectionTabListId" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">MO DAY</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_mo_day" id="txtInjTabListMoDay" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-30">
+                                                <span class="input-group-text w-100" id="basic-addon1">SHOT COUNT</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_shot_count" id="txtInjTabListShotCount">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">OPERATOR NAME</span>
+                                            </div>
+                                            <select class="form-select form-control-sm" name="inj_tab_list_operator_name" id="slctInjTabListOperatorName">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-30">
+                                                <span class="input-group-text w-100" id="basic-addon1">MATERIAL TIME "IN"</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_mat_time_in" id="txtInjTabListMatTimeIn">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">PRODUCTION TIME (START)</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_prond_time_start" id="txtInjTabListProndTimeStart" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-30">
+                                                <span class="input-group-text w-100" id="basic-addon1">PRODUCTION TIME (END)</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_prond_time_end" id="txtInjTabListProndTimeEnd">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">MATERIAL LOT NO. (VIRGIN)</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_mat_lot_num_virgin" id="txtInjTabListMatLotNumVirgin" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-30">
+                                                <span class="input-group-text w-100" id="basic-addon1">MATERIAL LOT NO. (RECYCLED)</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_mat_lot_num_recycle" id="txtInjTabListMatLotNumRecycle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-50">
+                                                <span class="input-group-text w-100" id="basic-addon1">TOTAL MATERIAL DRING TIME</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_total_mat_dring_time" id="txtInjTabListTotalMatDringTime" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend w-30">
+                                                <span class="input-group-text w-100" id="basic-addon1">REMARKS</span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" name="inj_tab_list_remarks" id="txtInjTabListRemarks">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" id="btnAddInjectionTabList" class="btn btn-primary"><i id="iconAddInjectionTabList" class="fa fa-check"></i> Save</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -2082,6 +2216,28 @@
             $('#formAddMachine2').submit(function (e) {
                 e.preventDefault();
                 saveMachineTwo();
+            });
+
+            const fnSaveInjectionTabList = function (){
+                $.ajax({
+                    type: 'POST',
+                    url: 'save_injection_tab_list',
+                    data: form.formInjectionTabList.serialize(),
+                    dataType: 'json',
+                    beforeSend: function(){
+
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    },error: function (data, xhr, status){
+                       toastr.error(`Error: ${data.status}`);
+                    }
+                });
+            }
+            $('#formInjectionTabList').submit(function (e) {
+                e.preventDefault();
+
+                fnSaveInjectionTabList();
             });
 
             dt.dataTablesMachineParameter = $("#tableMachineParameter_form1").DataTable({
@@ -2128,10 +2284,35 @@
                 ],
             });
 
-            //tableAddInjectionTabList
-            
-
-
+            dt.dataTablesInjectionTabList = $("#tableAddInjectionTabList").DataTable({
+                "processing" : false,
+                "serverSide" : true,
+                "responsive": true,
+                // "order": [[ 0, "desc" ],[ 4, "desc" ]],
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ user records",
+                    "lengthMenu": "Show _MENU_ user records",
+                },
+                "ajax" : {
+                    url: "load_injection_tab_list",
+                    data: function (param){
+                        param.machine_parameter_id = $('[name="machine_parameter_id"]').val();
+                    }
+                },
+                "columns":[
+                    { "data" : "get_action", orderable:false, searchable:false},
+                    { "data" : "inj_tab_list_mo_day"},
+                    { "data" : "inj_tab_list_shot_count"},
+                    { "data" : "inj_tab_list_operator_name"},
+                    { "data" : "inj_tab_list_mat_time_in"},
+                    { "data" : "inj_tab_list_prond_time_start"},
+                    { "data" : "inj_tab_list_prond_time_end"},
+                    { "data" : "inj_tab_list_total_mat_dring_time"},
+                    { "data" : "inj_tab_list_mat_lot_num_virgin"},
+                    { "data" : "inj_tab_list_mat_lot_num_recycle"},
+                    { "data" : "inj_tab_list_remarks"},
+                ],
+            });
             $(tbl.tableMachineParameter_form1).on('click','#btnEditMachineParameter', function () {
                 let machineParameterId = $(this).attr('machine-parameter-id');
                 editMachineParameter(machineParameterId);
