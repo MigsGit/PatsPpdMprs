@@ -106,9 +106,16 @@ class MachineParameterController extends Controller
         date_default_timezone_set('Asia/Manila');
         try {
             //machine_parameter_id
-            $machine_parameter_id= isset($request->machine_parameter_id) ? $request->machine_parameter_id : 0;
+            // $machine_parameter_id= isset($request->machine_parameter_id) ? $request->machine_parameter_id : 0;
+            if( isset( $request->machine_one_parameter_id )  ){
+                $machine_parameter_id = $request->machine_one_parameter_id;
+            }else if(    isset( $request->machine_two_parameter_id ) ){
+                $machine_parameter_id = $request->machine_two_parameter_id;
+            }else{
+                $machine_parameter_id = 0;
+            }
             $injection_tab_list = DB::connection('mysql')
-            ->select(' SELECT  list.*,list.id as injection_tab_list_id,parameter.id
+            ->select('SELECT list.*,list.id as "injection_tab_list_id",parameter.id
                 FROM injection_tab_lists AS list
                 LEFT JOIN machine_parameters parameter ON parameter.id = list.machine_parameter_id
                 WHERE parameter.id ='.$machine_parameter_id.' AND  list.deleted_at IS NULL AND parameter.deleted_at IS NULL
@@ -119,7 +126,7 @@ class MachineParameterController extends Controller
                 $result = '';
                 $result .= '<center>';
                 //<button type="button" class="btn btn-primary mb-3" machine-parameter-id='$row->id' id="btnAddMachine1" data-bs-toggle="modal" data-bs-target="#modalAddMachine1"><i class='fa-solid fa-pen-to-square'></i></button>
-                $result .= "<button class='btn btn-info btn-sm mr-1' machine-parameter-id='$row->id' id='btnEditMachineParameterTwo' data-bs-toggle='modal' data-bs-target='#modalAddMachine2'><i class='fa-solid fa-pen-to-square'></i></button>";
+                $result .= "<button type='button' class='btn btn-info btn-sm mr-1' injection-tab-list-id='$row->injection_tab_list_id' id='btnEditInjectionTabList' data-bs-toggle='modal' data-bs-target='#modalAddInjectionTabList'><i class='fa-solid fa-pen-to-square'></i></button>";
                 $result .= '</center>';
                 return $result;
             })
@@ -159,40 +166,38 @@ class MachineParameterController extends Controller
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {
+            $validation = array(
+                //Form Machine Parameter
+                'is_accumulator' => 'required',
+                //Form Mold Close
+                'obstacle_check_tm' => ['required','numeric'],
+                //Form Mold Open
+                'tmp_stop_time' => ['required','numeric'],
+                'tmp_stop_pos' => ['required','numeric'],
+                //Form Injection Velocity
+                'inj_pp1_unit' => ['required','numeric'],
+                'inj_v1_unit'=> ['required','numeric'],
+                'inj_veloc_no'=> ['required','numeric'],
+                'inj_press_no'=> ['required','numeric'],
+                'inj_tp2'=> ['required','numeric'],
+                'inj_pos_pb_unit'=> ['required','numeric'],
+                'inj_pv1_unit'=> ['required','numeric'],
+            );
+            $validator = Validator::make($request->all(), $validation);
+            if ($validator->fails()) {
+                return response()->json(['result' => '0', 'errors' => $validator->messages()],422);
+            }
+
             if( isset($request->machine_parameter_id) || $request->machine_parameter_id != ''){ //Edit Machine Parameter
-                // return 'edit';
                 MachineParameter::where('id',$request->machine_parameter_id)->whereNull('deleted_at')->update($machine_parameter_request->validated());
                 MoldClose::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($mold_close_request->validated());
                 EjectorLub::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($ejector_request->validated());
                 MoldOpen::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($mold_open_request->validated());
                 Heater::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($heater_request->validated());
                 InjectionVelocity::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($injection_velocity_request->validated());
-                //This InjenctionTab is for Machine 1 Requirement Only
+                //This InjectionTab Table is for Machine 1 Requirement Only
                 InjectionTab::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($injection_tab_request->validated());
             }else{ //Add Machine Parameter
-                // return 'add';
-                $validation = array(
-                    //Form Machine Parameter
-                    'is_accumulator' => 'required',
-                    //Form Mold Close
-                    'obstacle_check_tm' => ['required','numeric'],
-                    //Form Mold Open
-                    'tmp_stop_time' => ['required','numeric'],
-                    'tmp_stop_pos' => ['required','numeric'],
-                    //Form Injection Velocity
-                    'inj_pp1_unit' => ['required','numeric'],
-                    'inj_v1_unit'=> ['required','numeric'],
-                    'inj_veloc_no'=> ['required','numeric'],
-                    'inj_press_no'=> ['required','numeric'],
-                    'inj_tp2'=> ['required','numeric'],
-                    'inj_pos_pb_unit'=> ['required','numeric'],
-                    'inj_pv1_unit'=> ['required','numeric'],
-                );
-                $validator = Validator::make($request->all(), $validation);
-                if ($validator->fails()) {
-                    return response()->json(['result' => '0', 'errors' => $validator->messages()],422);
-                }
-
                 $machine_parameter_id = MachineParameter::insertGetId($machine_parameter_request->validated());
                 MachineParameter::where('id',$machine_parameter_id)->whereNull('deleted_at')->update([
                     'is_accumulator' => $request->is_accumulator,
@@ -265,7 +270,7 @@ class MachineParameterController extends Controller
         MoldCloseRequest $mold_close_request,EjectorRequest $ejector_request,
         MoldOpenRequest $mold_open_request,HeaterRequest $heater_request
         ,InjectionVelocityRequest $injection_velocity_request,SupportRequest $support_request
-        ){
+    ){
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {
@@ -275,7 +280,8 @@ class MachineParameterController extends Controller
                 EjectorLub::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($ejector_request->validated());
                 MoldOpen::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($mold_open_request->validated());
                 Heater::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($heater_request->validated());
-                //This Support is for Machine 2 Requirement Only
+                InjectionVelocity::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($injection_velocity_request->validated());
+                //This Support Table is for Machine 2 Requirement Only
                 Support::where('machine_parameter_id',$request->machine_parameter_id)->whereNull('deleted_at')->update($support_request->validated());
 
             }else{ //Add Machine Parameter
@@ -354,17 +360,20 @@ class MachineParameterController extends Controller
     }
 
     public function saveInjectionTabList(Request $request,InjectionTabListRequest $injection_tab_list_request){
-        // return 'true' ;
         date_default_timezone_set('Asia/Manila');
         DB::beginTransaction();
         try {
-            $injection_tab_list_id = InjectionTabList::insertGetId([
-                'machine_parameter_id' => $request->machine_parameter_id,
-                'created_at' => Carbon::now(),
-            ]);
-            InjectionTabList::where('id',$injection_tab_list_id)->whereNull('deleted_at')->update(
-                $injection_tab_list_request->validated()
-            );
+            if( isset($request->injection_tab_list_id) || $request->injection_tab_list_id != ''){ //Edit Machine Parameter
+                InjectionTabList::where('id',$request->injection_tab_list_id)->whereNull('deleted_at')->update($injection_tab_list_request->validated());
+            }else{
+                $injection_tab_list_id = InjectionTabList::insertGetId([
+                    'machine_parameter_id' => $request->machine_parameter_id,
+                    'created_at' => Carbon::now(),
+                ]);
+                InjectionTabList::where('id',$injection_tab_list_id)->whereNull('deleted_at')->update(
+                    $injection_tab_list_request->validated()
+                );
+            }
             DB::commit();
             return response()->json(['is_success' => 'true']);
         } catch (\Exception $e) {
@@ -400,14 +409,43 @@ class MachineParameterController extends Controller
             $machine_parameter_id = $request->machine_parameter_id;
 
             $machine_parameter_detail =  MachineParameter::with(
-                'mold_close','ejector_lub',
-                'mold_open','heater','support'
+                'mold_close','ejector_lub','mold_open',
+                'heater','injection_velocity','support'
             )->where('id',$machine_parameter_id)->get();
             return response()->json([
                 'is_success' => 'true',
                 'machine_parameter_detail' => $machine_parameter_detail[0],
             ]);
         } catch (\Exception $e) {
+            return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
+        }
+    }
+
+    public function getOperatorName(Request $request){
+
+        date_default_timezone_set('Asia/Manila');
+        try {
+            $pats_ppd_user = DB::connection('db_pats_cn_ppd')
+            ->select(" SELECT * FROM users ");
+            foreach ($pats_ppd_user as $key => $value_pats_ppd_user) {
+                $arr_pats_ppd_user_id[] =$value_pats_ppd_user->id;
+                $arr_pats_ppd_user_value[] =$value_pats_ppd_user->firstname .' '. $value_pats_ppd_user->lastname;
+            }
+            return response()->json([
+                'id'    =>  $arr_pats_ppd_user_id,
+                'value' =>  $arr_pats_ppd_user_value
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
+        }
+    }
+
+    public function editInjectionTabList(Request $request){
+        date_default_timezone_set('Asia/Manila');
+        try {
+            $injection_tab_details = InjectionTabList::where('id',$request->injection_tab_list_id)->whereNull('deleted_at')->get();
+            return response()->json(['is_success' => 'true','injection_tab_details'=>$injection_tab_details]);
+        } catch (\exitException $e) {
             return response()->json(['is_success' => 'false', 'exceptionError' => $e->getMessage()]);
         }
     }

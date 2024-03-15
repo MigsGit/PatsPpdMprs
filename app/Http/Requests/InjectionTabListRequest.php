@@ -26,7 +26,7 @@ class InjectionTabListRequest extends FormRequest
         return [
             // 'injection_tab_list_id'  => ['required'],
             'inj_tab_list_mo_day'    => ['required'],
-            // 'inj_tab_list_operator_name'  => ['required'],
+            'inj_tab_list_operator_name'  => ['required'],
             'inj_tab_list_shot_count'    => ['required'],
             'inj_tab_list_mat_time_in'   => ['required'],
             'inj_tab_list_prond_time_start'  => ['required'],

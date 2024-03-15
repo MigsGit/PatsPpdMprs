@@ -56,12 +56,40 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
+        'db_pats_cn_ppd' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE_PATS_PPD', 'forge'),
+            'username' => env('DB_USERNAME_PATS_PPD', 'forge'),
+            'password' => env('DB_PASSWORD_PATS_PPD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => false,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+        /*
+        DB_CONNECTION_PATS_PPD=db_pats_cn_ppd
+        DB_HOST_PATS_PPD=192.168.3.188 #rapid_EEDMS
+        DB_PORT_PATS_PPD=3306
+        DB_DATABASE_PATS_PPD=db_pats_cn_ppd
+        DB_USERNAME_PATS_PPD=rapidx
+        DB_PASSWORD_PATS_PPD=Ne0nFutur3*
+        */
 
         'rapidx' => [
             'driver' => 'mysql',
@@ -76,7 +104,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
